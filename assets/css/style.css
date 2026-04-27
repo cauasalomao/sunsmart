@@ -1,6 +1,6 @@
 /* ============================================================
-   POUSADA VALE DAS ARAUCÁRIAS — style.css
-   Template Modelo — site-base para pousadas
+   SUNSMART HOTEL — style.css
+   Hotel digital · Pina, Recife — PE
    ============================================================ */
 
 /* ── RESET ── */
@@ -34,8 +34,8 @@ button { cursor: pointer; }
   --shadow:       0 4px 24px rgba(0,0,0,.07);
   --shadow-lg:    0 12px 48px rgba(0,0,0,.13);
   --hero-overlay: linear-gradient(to bottom,rgba(20,18,18,.55) 0%,rgba(20,18,18,.65) 40%,rgba(20,18,18,.88) 100%);
-  --font-display: 'Pinyon Script', cursive;
-  --font-body:    'Raleway', sans-serif;
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body:    'Inter', system-ui, sans-serif;
   --space-xs: clamp(.5rem,1vw,.75rem);
   --space-sm: clamp(1rem,2vw,1.5rem);
   --space-md: clamp(2rem,4vw,3rem);
@@ -46,12 +46,12 @@ button { cursor: pointer; }
 }
 
 /* ── TIPOGRAFIA ── */
-h1 { font-family:var(--font-display); font-size:clamp(3rem,8vw,7rem); font-weight:400; line-height:1.05; }
-h2 { font-family:var(--font-display); font-size:clamp(2.2rem,5vw,4rem); font-weight:400; line-height:1.15; }
-h3 { font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:400; }
-h4 { font-family:var(--font-body); font-size:.85rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; }
+h1 { font-family:var(--font-display); font-size:clamp(2.6rem,6vw,5rem); font-weight:700; line-height:1.05; letter-spacing:-.02em; }
+h2 { font-family:var(--font-display); font-size:clamp(1.9rem,4vw,3.2rem); font-weight:700; line-height:1.15; letter-spacing:-.015em; }
+h3 { font-family:var(--font-display); font-size:clamp(1.2rem,2.2vw,1.7rem); font-weight:600; letter-spacing:-.005em; }
+h4 { font-family:var(--font-body); font-size:.78rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
 .overline { font-family:var(--font-body); font-size:.7rem; letter-spacing:.22em; text-transform:uppercase; color:var(--cta); font-weight:700; }
-p { font-size:clamp(.92rem,1.1vw,1.04rem); line-height:1.85; color:var(--text-muted); max-width:65ch; }
+p { font-size:clamp(.92rem,1.1vw,1.02rem); line-height:1.7; color:var(--text-muted); max-width:65ch; }
 
 /* ── LAYOUT ── */
 section { padding:var(--space-xl) 0; }
@@ -69,8 +69,8 @@ img { opacity:0; transition:opacity .6s ease; }
 img.loaded { opacity:1; }
 
 /* ── PLACEHOLDER QUANDO SEM FOTO ── */
-.hero-bg img { background:linear-gradient(160deg,#000000 0%,#5b7a3d 100%); }
-.pg-hero > img { background:linear-gradient(160deg,#000000 0%,#5b7a3d 60%); }
+.hero-bg img { background:linear-gradient(160deg,#000000 0%,#241F1F 100%); }
+.pg-hero > img { background:linear-gradient(160deg,#000000 0%,#241F1F 60%); }
 .ab-img img,.sobre-img-big img,.sobre-img-sm img,.rc-img img,.rp-c img,.gi img,.dp-img img { background:var(--surface-light); }
 
 /* ── BOTÕES ── */
@@ -90,8 +90,10 @@ img.loaded { opacity:1; }
 .hdr.hero-mode { background:transparent; }
 .hdr.solid { background:rgba(var(--bg-rgb),.97); backdrop-filter:blur(20px); padding:.9rem 0; box-shadow:0 1px 0 var(--border); }
 .hdr-inner { max-width:1400px; margin:0 auto; padding:0 clamp(1.5rem,4vw,3rem); display:flex; align-items:center; justify-content:space-between; }
-.logo { font-family:var(--font-display); font-size:1.8rem; font-weight:400; color:#fff; transition:color .4s; }
+.logo { font-family:var(--font-display); font-size:1.4rem; font-weight:700; letter-spacing:-.01em; color:#fff; transition:color .4s; display:flex; align-items:center; }
+.logo .logo-img { height:42px; width:auto; opacity:1; filter:brightness(0) invert(1); transition:filter .4s; }
 .hdr.solid .logo { color:var(--accent); }
+.hdr.solid .logo .logo-img { filter:none; }
 .nav { display:flex; gap:2.2rem; }
 .nav a { font-family:var(--font-body); font-size:.68rem; letter-spacing:.12em; text-transform:uppercase; font-weight:600; color:rgba(255,255,255,.88); position:relative; padding-bottom:4px; transition:color .3s; }
 .hdr.solid .nav a { color:var(--text); }
@@ -107,7 +109,7 @@ img.loaded { opacity:1; }
 .ham.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-4px); }
 .mobnav { position:fixed; inset:0; z-index:999; background:var(--bg); display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1.8rem; opacity:0; visibility:hidden; transition:all .4s var(--ease); padding:2rem; }
 .mobnav.open { opacity:1; visibility:visible; }
-.mobnav a { font-family:var(--font-display); font-size:clamp(1.8rem,5vw,2.8rem); color:var(--text); transition:color .2s; }
+.mobnav a { font-family:var(--font-display); font-size:clamp(1.4rem,3.5vw,2rem); font-weight:700; letter-spacing:-.01em; color:var(--text); transition:color .2s; }
 .mobnav a:hover { color:var(--accent); }
 .mobnav .btn-gold { font-family:var(--font-body)!important; font-size:.75rem!important; letter-spacing:.18em!important; padding:.85rem 2rem!important; }
 
@@ -119,7 +121,7 @@ img.loaded { opacity:1; }
 .hero-ov { position:absolute; inset:0; background:rgba(0,0,0,.55); }
 .hero-c { position:relative; z-index:2; display:flex; flex-direction:column; align-items:center; text-align:center; padding:0 clamp(1.5rem,4vw,3rem); width:100%; gap:clamp(1.4rem,3vh,2.2rem); }
 .hero-overline { font-family:var(--font-body); font-size:.72rem; letter-spacing:.28em; text-transform:uppercase; color:rgba(255,255,255,.78); font-weight:600; display:block; margin:0; }
-.hero-title { font-family:var(--font-display); font-size:clamp(4.5rem,12vw,9rem); font-weight:400; line-height:1; color:#fff; margin:0; }
+.hero-title { font-family:var(--font-display); font-size:clamp(3rem,8vw,6.5rem); font-weight:700; line-height:1; color:#fff; margin:0; letter-spacing:-.025em; }
 .hero-divider { width:50px; height:1.5px; background:var(--cta); margin:0; display:none; }
 .hero-sub { font-family:var(--font-body); font-size:clamp(1rem,1.6vw,1.25rem); color:rgba(255,255,255,.92); letter-spacing:.05em; font-weight:300; margin:0; }
 .hero-ctas { display:flex; gap:1.2rem; justify-content:center; flex-wrap:wrap; margin:0; }
@@ -177,7 +179,7 @@ img.loaded { opacity:1; }
 .aud-card img { width:100%; height:100%; object-fit:cover; transition:transform .7s var(--ease); display:block; }
 .aud-card:hover img { transform:scale(1.06); }
 .aud-ov { position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.2) 50%, rgba(0,0,0,0) 100%); pointer-events:none; }
-.aud-label { position:absolute; left:0; right:0; bottom:clamp(1.2rem,3vw,2rem); text-align:center; color:#fff; font-family:var(--font-display); font-size:clamp(1.8rem,3.5vw,2.6rem); font-weight:400; line-height:1.1; letter-spacing:.01em; text-shadow:0 2px 12px rgba(0,0,0,.5); padding:0 1rem; }
+.aud-label { position:absolute; left:0; right:0; bottom:clamp(1.2rem,3vw,2rem); text-align:center; color:#fff; font-family:var(--font-display); font-size:clamp(1.3rem,2.5vw,1.9rem); font-weight:700; line-height:1.1; letter-spacing:-.01em; text-shadow:0 2px 12px rgba(0,0,0,.5); padding:0 1rem; }
 
 /* ── QUARTOS PREVIEW ── */
 .rp-g { display:grid; grid-template-columns:repeat(3,1fr); gap:1.5rem; margin-top:clamp(2.5rem,5vw,4rem); }
@@ -362,7 +364,7 @@ img.loaded { opacity:1; }
 .dp-close { position:absolute; top:.8rem; right:.8rem; background:rgba(0,0,0,.3); border:none; color:#fff; width:30px; height:30px; border-radius:50%; cursor:pointer; font-size:1.2rem; display:flex; align-items:center; justify-content:center; z-index:2; transition:background .2s; }
 .dp-close:hover { background:rgba(0,0,0,.5); }
 .dp-content { padding:2.5rem 2rem; display:flex; flex-direction:column; justify-content:center; }
-.dp-content h3 { font-family:var(--font-display); font-size:clamp(1.6rem,3vw,2.4rem); font-weight:400; line-height:1.2; margin:.5rem 0 .8rem; }
+.dp-content h3 { font-family:var(--font-display); font-size:clamp(1.4rem,2.5vw,2rem); font-weight:700; line-height:1.2; margin:.5rem 0 .8rem; letter-spacing:-.015em; }
 .dp-highlight { color:var(--cta); }
 .dp-sub { font-size:.86rem; color:var(--text-muted); margin-bottom:1.5rem; max-width:100%; }
 .dp-field { margin-bottom:.8rem; }
@@ -387,7 +389,8 @@ img.loaded { opacity:1; }
 /* ── FOOTER ── */
 footer { background:var(--text); color:rgba(255,255,255,.8); padding:clamp(4rem,8vw,7rem) 0 2rem; }
 .ft-grid { display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:3rem; margin-bottom:4rem; }
-.ft-brand .logo { font-size:2.2rem; color:rgba(255,255,255,.9); display:block; margin-bottom:1rem; }
+.ft-brand .logo { font-size:1.6rem; color:rgba(255,255,255,.9); display:block; margin-bottom:1rem; }
+.ft-brand .logo .logo-img { height:48px; width:auto; filter:brightness(0) invert(1); }
 .ft-brand p { font-size:.82rem; color:rgba(255,255,255,.45); max-width:28ch; }
 .ft-social { display:flex; gap:.8rem; margin-top:1.5rem; }
 .ft-social a { width:36px; height:36px; border-radius:50%; background:rgba(255,255,255,.08); display:flex; align-items:center; justify-content:center; color:rgba(255,255,255,.65); font-size:.9rem; transition:background .2s,color .2s; }
