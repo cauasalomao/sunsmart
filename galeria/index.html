@@ -296,11 +296,14 @@
     ['fotos/12_Banheiros/IMG_5011.jpg', 'Detalhe da bancada do banheiro']
   ];
 
+  // Grid usa miniaturas (~800px, ~50KB cada); lightbox carrega o original sob demanda.
+  const thumb = p => p.replace('fotos/', 'fotos-thumb/');
+
   const grid = document.getElementById('galGrid');
   if (grid) {
     grid.innerHTML = GALLERY.map(([path, alt], i) =>
       `<div class="gi" onclick="openLB(${i})">
-         <img src="../assets/img/${path}" alt="${alt}" loading="lazy">
+         <img src="../assets/img/${thumb(path)}" alt="${alt}" loading="lazy" decoding="async">
          <div class="gi-ov">⊕</div>
        </div>`
     ).join('');
