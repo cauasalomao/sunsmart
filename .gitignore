@@ -1,2 +1,8 @@
 pousada-montverde-final/
 .claude/
+
+# Arquivos privados — NUNCA versionar (briefings, configs internas, instruções)
+CLAUDE.md
+hotel-config.json
+blog-plan.json
+*Briefing*.md
