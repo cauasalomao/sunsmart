@@ -4,16 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="../favicon.svg">
-<title>Experiência — Pousada Vale das Araucárias | Cavalos, Pescaria, Quadriciclo na Serra Geral</title>
-<meta name="description" content="Descubra as atividades da Pousada Vale das Araucárias: passeios a cavalo inclusos, pescaria no lago, quadriciclo, colheita de frutas e contato com animais na Serra Geral.">
-<meta property="og:title" content="Experiência | Pousada Vale das Araucárias — Serra Geral">
-<meta property="og:description" content="Descubra as atividades da Pousada Vale das Araucárias: passeios a cavalo inclusos, pescaria no lago, quadriciclo, colheita de frutas e contato com animais na Serra Geral.">
-<meta property="og:image" content="https://pousadavaledasaraucarias.com.br/assets/img/placeholder.svg">
-<meta property="og:url" content="https://pousadavaledasaraucarias.com.br/experiencia/">
-<link rel="canonical" href="https://pousadavaledasaraucarias.com.br/experiencia/">
+<title>Como funciona — Sunsmart Hotel | Check-in Digital, Smart Market, Coworking</title>
+<meta name="description" content="Entenda como funciona o Sunsmart: check-in 100% online, sem chaves, smart market autoatendimento, café & coworking, cozinha compartilhada e acesso 24h.">
+<meta property="og:title" content="Como funciona — Sunsmart Hotel">
+<meta property="og:description" content="Hotel digital no Pina, Recife: check-in online, sem chaves, smart market, coworking e cozinha compartilhada. Sua estadia, no seu tempo.">
+<meta property="og:image" content="https://www.sunsmarthotel.com.br/assets/img/fotos/03_Acesso_Recepcao_Virtual/IMG_4629.jpg">
+<meta property="og:url" content="https://www.sunsmarthotel.com.br/experiencia/">
+<link rel="canonical" href="https://www.sunsmarthotel.com.br/experiencia/">
 <meta name="twitter:card" content="summary_large_image">
 <meta property="og:locale" content="pt_BR">
-<meta name="twitter:image" content="https://pousadavaledasaraucarias.com.br/assets/img/placeholder.svg">
+<meta name="twitter:image" content="https://www.sunsmarthotel.com.br/assets/img/fotos/03_Acesso_Recepcao_Virtual/IMG_4629.jpg">
 
 <!-- GTM HEAD: Inserir quando disponível -->
 
@@ -21,14 +21,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" type="text/css" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/thin/style.css">
-<link rel="stylesheet" href="../assets/css/style.css">
+<link rel="stylesheet" href="../assets/css/style.css?v=7">
 <style>
-/* ── EXPERIENCE PAGE SPECIFIC ── */
 .exp-intro { max-width:700px; margin:0 auto; text-align:center; }
 .exp-intro h2 { margin:.5rem 0 1rem; }
 .exp-intro p { margin:0 auto; font-size:1.05rem; }
 
-/* ── FEATURE BLOCK (imagem + texto lado a lado) ── */
 .feat-block { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,6rem); align-items:center; margin-bottom:clamp(5rem,10vw,8rem); }
 .feat-block.reverse { direction:rtl; }
 .feat-block.reverse > * { direction:ltr; }
@@ -44,53 +42,37 @@
 .feat-list li { display:flex; align-items:flex-start; gap:.6rem; font-size:.88rem; color:var(--text-muted); line-height:1.6; }
 .feat-list li::before { content:'—'; color:var(--cta); flex-shrink:0; margin-top:.05rem; }
 
-/* ── TEXT-ONLY CARD (sem foto) ── */
 .txt-block { background:var(--surface); border-left:4px solid var(--accent); padding:2.5rem 2.5rem 2.5rem 2rem; box-shadow:var(--shadow); display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,5vw,4rem); align-items:start; margin-bottom:clamp(5rem,10vw,8rem); }
 .txt-block-icon { font-size:3.5rem; line-height:1; margin-bottom:1rem; display:block; }
 .txt-block-tag { display:flex; align-items:center; gap:.5rem; font-family:var(--font-body); font-size:.68rem; letter-spacing:.2em; text-transform:uppercase; color:var(--cta); font-weight:700; margin-bottom:.6rem; }
-.txt-block h2 { margin:.2rem 0 .8rem; font-size:clamp(1.8rem,4vw,3rem); }
+.txt-block h2 { margin:.2rem 0 .8rem; font-size:clamp(1.6rem,3.5vw,2.6rem); }
 .txt-block p { font-size:.95rem; }
 .txt-block-cols { display:grid; grid-template-columns:1fr 1fr; gap:1.5rem; margin-top:1rem; }
 .txt-item { background:var(--surface-light); padding:1.2rem; border-top:2px solid var(--accent); }
 .txt-item h4 { font-size:.75rem; letter-spacing:.1em; margin-bottom:.4rem; color:var(--text); }
 .txt-item p { font-size:.82rem; max-width:100%; line-height:1.65; }
 
-/* ── FOTOS GRID 4 ── */
-.area-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:1rem; margin-top:3rem; }
-.area-grid img { width:100%; aspect-ratio:4/3; object-fit:cover; opacity:1; transition:transform .4s; }
-.area-grid img:hover { transform:scale(1.03); }
-
-/* ── SEÇÃO FUNDO VERDE ── */
 .sec-green { background:var(--accent); padding:clamp(3.5rem,7vw,6rem) 0; }
 .sec-green .feat-block { margin-bottom:0; }
 .sec-green .feat-txt h2, .sec-green .feat-txt p { color:#fff; }
-.sec-green .feat-tag { color:#fff; opacity:.85; }
+.sec-green .feat-tag { color:var(--cta); }
 .sec-green .feat-list li { color:rgba(255,255,255,.85); }
 .sec-green .feat-list li::before { color:var(--cta); }
 .sec-green .divider { background:var(--cta); }
-.sec-green .txt-block { background:rgba(255,255,255,.06); border-left-color:var(--cta); box-shadow:none; }
-.sec-green .txt-block h2, .sec-green .txt-block > div > p { color:#fff; }
-.sec-green .txt-block-tag { color:var(--cta); }
-.sec-green .txt-block-icon { color:#fff; }
-.sec-green .txt-item { background:rgba(0,0,0,.18); border-top-color:var(--cta); }
-.sec-green .txt-item h4 { color:#fff; }
-.sec-green .txt-item p { color:rgba(255,255,255,.8); }
 
-/* ── SEÇÃO FUNDO COM FOTO (fixo no viewport via clip-path) ── */
 .sec-photo { position:relative; z-index:0; clip-path:inset(0); padding:clamp(3.5rem,7vw,6rem) 0; isolation:isolate; }
 .sec-photo::before { content:''; position:fixed; inset:0; background-image:var(--bg-photo); background-size:cover; background-position:center; background-repeat:no-repeat; z-index:-2; pointer-events:none; }
-.sec-photo::after { content:''; position:fixed; inset:0; background:rgba(0,0,0,.65); z-index:-1; pointer-events:none; }
+.sec-photo::after { content:''; position:fixed; inset:0; background:rgba(0,0,0,.7); z-index:-1; pointer-events:none; }
 .sec-photo > .container { position:relative; z-index:1; }
 .sec-photo .txt-block { background:rgba(255,255,255,.05); backdrop-filter:blur(4px); border-left-color:var(--cta); box-shadow:0 10px 40px rgba(0,0,0,.3); margin-bottom:0; }
 .sec-photo .txt-block h2, .sec-photo .txt-block > div > p { color:#fff; }
 .sec-photo .txt-block-tag { color:var(--cta); }
 .sec-photo .txt-block-icon { color:#fff; }
-.sec-photo .txt-item { background:rgba(0,0,0,.4); border-top-color:var(--cta); }
+.sec-photo .txt-item { background:rgba(0,0,0,.45); border-top-color:var(--cta); }
 .sec-photo .txt-item h4 { color:#fff; }
 .sec-photo .txt-item p { color:rgba(255,255,255,.85); }
 
-/* ── QUADRICICLO SPLIT (imagem esquerda + texto direita) ── */
-.sec-green-dark { background:var(--accent-hover); }
+.sec-green-dark { background:#0f0d0d; }
 .quad-split { display:grid; grid-template-columns:1fr 1fr; gap:clamp(2rem,4vw,3.5rem); align-items:center; }
 .quad-split-img { overflow:hidden; border-radius:10px; aspect-ratio:3/4; max-height:560px; }
 .quad-split-img img { width:100%; height:100%; object-fit:cover; display:block; }
@@ -100,24 +82,16 @@
 .quad-split-txt h2 { margin:.1rem 0 .4rem; color:#fff; }
 .quad-split-txt > p { color:rgba(255,255,255,.88); font-size:.96rem; }
 .quad-cols { display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin-top:1.2rem; }
-.quad-cols .txt-item { background:rgba(0,0,0,.25); border-top:2px solid var(--cta); padding:1rem 1.1rem; }
+.quad-cols .txt-item { background:rgba(255,255,255,.06); border-top:2px solid var(--cta); padding:1rem 1.1rem; }
 .quad-cols .txt-item h4 { color:#fff; font-size:.72rem; letter-spacing:.08em; margin-bottom:.35rem; }
 .quad-cols .txt-item p { color:rgba(255,255,255,.82); font-size:.8rem; line-height:1.55; }
-@media(max-width:768px){
-  .quad-split { grid-template-columns:1fr; }
-  .quad-split-img { aspect-ratio:16/10; max-height:none; }
-  .quad-cols { grid-template-columns:1fr; }
-}
-
-/* MOBILE */
 @media(max-width:768px){
   .feat-block,.feat-block.reverse { grid-template-columns:1fr; direction:ltr; }
   .txt-block { grid-template-columns:1fr; }
   .txt-block-cols { grid-template-columns:1fr; }
-  .area-grid { grid-template-columns:1fr 1fr; }
-}
-@media(max-width:480px){
-  .area-grid { grid-template-columns:1fr; }
+  .quad-split { grid-template-columns:1fr; }
+  .quad-split-img { aspect-ratio:16/10; max-height:none; }
+  .quad-cols { grid-template-columns:1fr; }
 }
 </style>
 
@@ -125,15 +99,15 @@
 {
   "@context": "https://schema.org",
   "@type": "WebPage",
-  "name": "Experiência — Cavalos, Pescaria, Quadriciclo e Natureza",
-  "description": "Descubra as atividades da Pousada Vale das Araucárias: passeios a cavalo inclusos, pescaria no lago, quadriciclo, colheita de frutas e contato com animais na Serra Geral.",
-  "url": "https://pousadavaledasaraucarias.com.br/experiencia/",
-  "isPartOf": {"@type":"WebSite","url":"https://pousadavaledasaraucarias.com.br/","name":"Pousada Vale das Araucárias"},
+  "name": "Como funciona — Sunsmart Hotel",
+  "description": "Check-in digital, sem chaves, smart market, café & coworking, cozinha compartilhada e acesso 24h no Sunsmart Hotel — Pina, Recife.",
+  "url": "https://www.sunsmarthotel.com.br/experiencia/",
+  "isPartOf": {"@type":"WebSite","url":"https://www.sunsmarthotel.com.br/","name":"Sunsmart Hotel"},
   "breadcrumb": {
     "@type": "BreadcrumbList",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"Home","item":"https://pousadavaledasaraucarias.com.br/"},
-      {"@type":"ListItem","position":2,"name":"Experiência","item":"https://pousadavaledasaraucarias.com.br/experiencia/"}
+      {"@type":"ListItem","position":1,"name":"Home","item":"https://www.sunsmarthotel.com.br/"},
+      {"@type":"ListItem","position":2,"name":"Como funciona","item":"https://www.sunsmarthotel.com.br/experiencia/"}
     ]
   }
 }
@@ -141,15 +115,13 @@
 </head>
 <body>
 
-<!-- GTM BODY: Inserir quando disponível -->
-
 <!-- HEADER -->
 <header class="hdr hero-mode" id="hdr">
   <div class="hdr-inner">
-    <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt="Pousada Vale das Araucárias" class="logo-img"></a>
+    <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt="Sunsmart Hotel" class="logo-img"></a>
     <nav class="nav desktop-nav">
       <a href="../sobre/">Sobre</a>
-      <a href="../experiencia/" style="color:var(--cta)">Experiência</a>
+      <a href="../experiencia/" style="color:var(--cta)">Como funciona</a>
       <a href="../acomodacoes/">Acomodações</a>
       <a href="../galeria/">Galeria</a>
       <a href="../localizacao/">Localização</a>
@@ -165,7 +137,7 @@
 
 <div class="mobnav" id="mobnav">
   <a href="../sobre/" onclick="closeMob()">Sobre</a>
-  <a href="../experiencia/" onclick="closeMob()">Experiência</a>
+  <a href="../experiencia/" onclick="closeMob()">Como funciona</a>
   <a href="../acomodacoes/" onclick="closeMob()">Acomodações</a>
   <a href="../galeria/" onclick="closeMob()">Galeria</a>
   <a href="../localizacao/" onclick="closeMob()">Localização</a>
@@ -176,10 +148,10 @@
 
 <!-- PAGE HERO -->
 <div class="pg-hero">
-  <img src="../assets/img/placeholder.svg" alt="Experiência — Pousada Vale das Araucárias" fetchpriority="high" class="loaded">
+  <img src="../assets/img/fotos/03_Acesso_Recepcao_Virtual/IMG_4629.jpg" alt="Recepção virtual do Sunsmart Hotel" fetchpriority="high" class="loaded">
   <div class="pg-hero-c">
-    <span class="overline">Lazer & Natureza</span>
-    <h1>A Experiência Vale das Araucárias</h1>
+    <span class="overline">Sua estadia, sob seu controle</span>
+    <h1>Como funciona</h1>
   </div>
 </div>
 
@@ -187,107 +159,107 @@
 <section>
   <div class="container">
     <div class="exp-intro">
-      <p class="overline">O que nos diferencia</p>
-      <h2>Muito mais que uma hospedagem</h2>
+      <p class="overline">A lógica do Sunsmart</p>
+      <h2>Hospedagem que funciona como um aplicativo.</h2>
       <div class="divider cx"></div>
-      <p>No Vale das Araucárias, cada dia é uma aventura. Das cavalgadas pela serra à pescaria no lago, da colheita de frutas ao contato com pôneis — aqui você vive o campo de verdade.</p>
+      <p>Reserva online, pagamento online, senha por e-mail e WhatsApp, entrada direta no quarto. Smart market e cozinha sempre abertos, café & coworking para trabalhar, equipe pelos canais digitais. Sem fila, sem chave, sem espera.</p>
     </div>
 
     <!-- PÚBLICOS -->
     <div class="aud-grid" style="margin-top:3.5rem">
       <div class="aud-card">
-        <img src="../assets/img/placeholder.svg" alt="Crianças brincando com pôneis — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/05_Cafe_Coworking/IMG_4721.jpg" alt="Hóspede no espaço de coworking do Sunsmart" loading="lazy">
         <div class="aud-ov"></div>
-        <span class="aud-label">Para crianças</span>
+        <span class="aud-label">Para quem viaja a trabalho</span>
       </div>
       <div class="aud-card">
-        <img src="../assets/img/placeholder.svg" alt="Família no passeio de carretinha — Pousada Vale das Araucárias" loading="lazy">
-        <div class="aud-ov"></div>
-        <span class="aud-label">Para famílias</span>
-      </div>
-      <div class="aud-card">
-        <img src="../assets/img/placeholder.svg" alt="Casal no balanço infinito ao pôr do sol — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/11_Quartos/IMG_4884.jpg" alt="Suíte casal do Sunsmart" loading="lazy">
         <div class="aud-ov"></div>
         <span class="aud-label">Para casais</span>
+      </div>
+      <div class="aud-card">
+        <img src="../assets/img/fotos/04_Lobby_Hall/IMG_4559.jpg" alt="Lobby do Sunsmart" loading="lazy">
+        <div class="aud-ov"></div>
+        <span class="aud-label">Para estadias autônomas</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PASSEIO A CAVALO — feat-block com foto -->
+<!-- CHECK-IN DIGITAL -->
 <section class="sec-green">
   <div class="container">
     <div class="feat-block">
       <div class="feat-img">
-        <img src="../assets/img/placeholder.svg" alt="Passeio a Cavalo em família — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/03_Acesso_Recepcao_Virtual/IMG_4634.jpg" alt="Totem de check-in digital do Sunsmart" loading="lazy">
       </div>
       <div class="feat-txt">
-        <div class="feat-tag"><span><i class="ph-thin ph-horse"></i></span> Lazer Incluso</div>
-        <h2>Passeio a Cavalo</h2>
+        <div class="feat-tag"><span><i class="ph-thin ph-device-mobile"></i></span> Reserva → Senha → Quarto</div>
+        <h2>Check-in 100% Online</h2>
         <div class="divider" style="margin:.5rem 0"></div>
-        <p>Aqui na Pousada Vale das Araucárias os passeios a cavalo são livres — você não paga nada a mais. Dispomos de cavalos bem domados e mansos, além de pôneis para a diversão das crianças. Nosso caseiro orienta quem não sabe montar até se sentir seguro.</p>
+        <p>Você reserva pelo site, paga online e recebe a senha de acesso por e-mail e WhatsApp. Não tem balcão. Não tem fila. Não tem chave para perder. No horário do check-in, é só chegar e entrar.</p>
         <ul class="feat-list">
-          <li>Para cada 2 diárias, 1 dia de passeio incluso</li>
-          <li>Horários: 10h–12h e 15h–18h (exceto domingos)</li>
-          <li>Cavalos mansos e bem cuidados</li>
-          <li>Pôneis para as crianças</li>
+          <li>Senha digital enviada após confirmação do pagamento</li>
+          <li>Check-in a partir das 14h, checkout até 11h</li>
+          <li>Acesso ao quarto e às áreas comuns pela mesma senha</li>
+          <li>Equipe disponível pelos canais digitais 7 dias por semana</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PESCARIA — feat-block reverse com foto -->
+<!-- SMART MARKET -->
 <section>
   <div class="container">
     <div class="feat-block reverse">
       <div class="feat-img">
-        <img src="../assets/img/placeholder.svg" alt="Menino pescando no lago — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/06_Smart_Market/IMG_4523.jpg" alt="Smart Market — autoatendimento 24h" loading="lazy">
       </div>
       <div class="feat-txt">
-        <div class="feat-tag"><span><i class="ph-thin ph-fish"></i></span> Lazer & Aventura</div>
-        <h2>Pescaria no Lago</h2>
+        <div class="feat-tag"><span><i class="ph-thin ph-storefront"></i></span> Autoatendimento 24h</div>
+        <h2>Smart Market</h2>
         <div class="divider" style="margin:.5rem 0"></div>
-        <p>A pescaria é livre nos nossos 3 açudes com carpas, traíras e carás. Se você for paciente, poderá pescar uma carpa de até 5 kg! Traga seus equipamentos ou use nossas varas. O peixe pescado pode ser consumido sem custo adicional.</p>
+        <p>Loja de conveniência aberta 24 horas, dentro do hotel, em formato de autoatendimento. Bebidas geladas, snacks, itens de viagem, escova de dente esquecida — o que você precisar, está disponível na hora que precisar, sem depender de ninguém.</p>
         <ul class="feat-list">
-          <li>Carpas capim e húngara, traíras e carás</li>
-          <li>Varas de pescar disponíveis</li>
-          <li>Peixe pescado pode ser consumido</li>
-          <li>Ideal para a garotada</li>
+          <li>Bebidas e snacks selecionados</li>
+          <li>Itens de higiene e viagem</li>
+          <li>Pagamento direto, sem fila</li>
+          <li>Disponível 24 horas por dia</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- QUADRICICLO — imagem à esquerda + texto à direita -->
+<!-- CAFÉ & COWORKING -->
 <section class="sec-green sec-green-dark">
   <div class="container">
     <div class="quad-split">
       <div class="quad-split-img">
-        <img src="../assets/img/placeholder.svg" alt="Passeio de quadriciclo pela propriedade — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/05_Cafe_Coworking/IMG_4473.jpg" alt="Espaço de café e coworking do Sunsmart" loading="lazy">
       </div>
       <div class="quad-split-txt">
-        <span class="txt-block-icon"><i class="ph-thin ph-motorcycle"></i></span>
-        <div class="txt-block-tag">Aventura</div>
-        <h2>Quadriciclo</h2>
-        <p>Dois quadriciclos super potentes (520 e 420 cilindradas), para uma experiência incrível com segurança. Passeio dentro da propriedade com acompanhante na carona. Ou, sem custo, um passeio na carretinha puxada pelo quadriciclo — com ou sem emoção, você escolhe!</p>
+        <span class="txt-block-icon"><i class="ph-thin ph-coffee"></i></span>
+        <div class="txt-block-tag">Trabalho em viagem</div>
+        <h2>Café & Coworking</h2>
+        <p>Um espaço pensado para quem viaja a trabalho ou precisa resolver pendências entre uma reunião e outra. Mesas, tomadas, Wi-Fi rápido e café à disposição. Funciona como uma extensão natural do seu dia, sem precisar sair do hotel.</p>
         <div class="txt-block-cols quad-cols">
           <div class="txt-item">
-            <h4><i class="ph-thin ph-currency-circle-dollar"></i> R$ 75/15min ou R$ 300/1h</h4>
-            <p>Valores por passeio dentro da propriedade.</p>
+            <h4><i class="ph-thin ph-wifi-high"></i> Wi-Fi de alta velocidade</h4>
+            <p>Conexão estável para reuniões e uploads pesados.</p>
           </div>
           <div class="txt-item">
-            <h4><i class="ph-thin ph-users"></i> Máximo 2 pessoas (16+ anos)</h4>
-            <p>Piloto e um acompanhante na carona.</p>
+            <h4><i class="ph-thin ph-coffee"></i> Café à disposição</h4>
+            <p>Cafezinho disponível durante o dia, sem custo adicional.</p>
           </div>
           <div class="txt-item">
-            <h4><i class="ph-thin ph-truck"></i> Carretinha grátis</h4>
-            <p>Passeio sem custo — com ou sem emoção.</p>
+            <h4><i class="ph-thin ph-armchair"></i> Mesas e tomadas</h4>
+            <p>Estações para notebook em ambiente silencioso.</p>
           </div>
           <div class="txt-item">
-            <h4><i class="ph-thin ph-shield-check"></i> Equipamentos seminovos</h4>
-            <p>Quadriciclos bem mantidos para sua segurança.</p>
+            <h4><i class="ph-thin ph-clock"></i> Acesso integrado</h4>
+            <p>Liberado pela mesma senha do check-in.</p>
           </div>
         </div>
       </div>
@@ -295,111 +267,106 @@
   </div>
 </section>
 
-<!-- CONTATO COM ANIMAIS — feat-block com foto -->
+<!-- COZINHA COMPARTILHADA -->
 <section>
   <div class="container">
     <div class="feat-block">
       <div class="feat-img">
-        <img src="../assets/img/placeholder.svg" alt="Menina abraçando pônei — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/07_Cozinha_Comum/IMG_4761.jpg" alt="Cozinha compartilhada equipada do Sunsmart" loading="lazy">
       </div>
       <div class="feat-txt">
-        <div class="feat-tag"><span><i class="ph-thin ph-paw-print"></i></span> Vida no Campo</div>
-        <h2>Contato com Animais</h2>
+        <div class="feat-tag"><span><i class="ph-thin ph-cooking-pot"></i></span> Autonomia total</div>
+        <h2>Cozinha Compartilhada</h2>
         <div class="divider" style="margin:.5rem 0"></div>
-        <p>A pousada é lar de pôneis, cavalos, patos, gansos, galinhas, ovelhas, bois e até um porquinho. As crianças podem alimentar os pôneis com cenouras, colher ovos direto do galinheiro e alimentar o porquinho. Uma experiência que marca a infância para sempre.</p>
+        <p>Cozinha completa, equipada e disponível para todos os hóspedes. Para estadias mais longas, é a diferença entre comer fora todos os dias e fazer sua própria refeição quando der vontade. Economia, autonomia e a praticidade de quem quer se sentir em casa.</p>
         <ul class="feat-list">
-          <li>Alimentar os pôneis com cenouras</li>
-          <li>Colher ovos do galinheiro</li>
-          <li>Alimentar o porquinho</li>
-          <li>Fotos com os pôneis</li>
+          <li>Fogão, micro-ondas, geladeira e utensílios completos</li>
+          <li>Espaço para preparar e fazer refeições</li>
+          <li>Ideal para estadias de média e longa duração</li>
+          <li>Limpeza coletiva — uso responsável</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- MAIS ATIVIDADES — txt-block com foto de fundo -->
-<section class="sec-photo" style="--bg-photo:url('../assets/img/placeholder.svg')">
+<!-- AINDA TEM MAIS -->
+<section class="sec-photo" style="--bg-photo:url('../assets/img/fotos/10_Corredores_Sinalizacao/IMG_4838.jpg')">
   <div class="container">
     <div class="txt-block">
       <div>
-        <span class="txt-block-icon"><i class="ph-thin ph-tree-evergreen"></i></span>
-        <div class="txt-block-tag">Lazer Livre</div>
-        <h2>Ainda Tem Mais</h2>
-        <p>São dezenas de atividades inclusas na diária para todas as idades. Aventura, descanso e diversão no mesmo lugar.</p>
+        <span class="txt-block-icon"><i class="ph-thin ph-buildings"></i></span>
+        <div class="txt-block-tag">A estrutura completa</div>
+        <h2>Ainda tem mais</h2>
+        <p>Lockers para guardar bagagem antes do check-in ou depois do checkout, segurança digital com CFTV, sinalização clara para você se localizar sozinho, lobby para esperar e relaxar. Tudo planejado para você ter autonomia total durante a estadia.</p>
       </div>
       <div class="txt-block-cols">
         <div class="txt-item">
-          <h4><i class="ph-thin ph-bicycle"></i> Bicicletas adulto e infantil</h4>
-          <p>Pedale pela propriedade e arredores sem custo.</p>
+          <h4><i class="ph-thin ph-lock-key"></i> Lockers de bagagem</h4>
+          <p>Guarde suas malas antes do check-in ou após o checkout.</p>
         </div>
         <div class="txt-item">
-          <h4><i class="ph-thin ph-house"></i> Casinha na árvore</h4>
-          <p>Diversão garantida para crianças e adolescentes.</p>
+          <h4><i class="ph-thin ph-shield-check"></i> Segurança digital 24h</h4>
+          <p>CFTV monitorado e acesso por senha individual.</p>
         </div>
         <div class="txt-item">
-          <h4><i class="ph-thin ph-plant"></i> Colheita de maçã e uva (jan-mar)</h4>
-          <p>Colha direto do pé na temporada de frutas.</p>
+          <h4><i class="ph-thin ph-map-trifold"></i> Sinalização clara</h4>
+          <p>Você se localiza sozinho, do quarto à área comum.</p>
         </div>
         <div class="txt-item">
-          <h4><i class="ph-thin ph-boat"></i> Canoa no lago</h4>
-          <p>Passeie de canoa pelos açudes da pousada.</p>
+          <h4><i class="ph-thin ph-armchair"></i> Lobby acolhedor</h4>
+          <p>Espaço para esperar, descansar ou tomar um café.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- COLHEITA DE FRUTAS — feat-block reverse com foto -->
+<!-- ACESSO 24H -->
 <section>
   <div class="container">
     <div class="feat-block reverse">
       <div class="feat-img">
-        <img src="../assets/img/placeholder.svg" alt="Colheita de morangos — Pousada Vale das Araucárias" loading="lazy">
+        <img src="../assets/img/fotos/03_Acesso_Recepcao_Virtual/IMG_4650.jpg" alt="Acesso por senha digital ao Sunsmart" loading="lazy">
       </div>
       <div class="feat-txt">
-        <div class="feat-tag"><span><i class="ph-thin ph-wine"></i></span> Experiência Sazonal</div>
-        <h2>Colheita de Frutas</h2>
+        <div class="feat-tag"><span><i class="ph-thin ph-clock"></i></span> Sem horário comercial</div>
+        <h2>Acesso 24 horas</h2>
         <div class="divider" style="margin:.5rem 0"></div>
-        <p>Temos o privilégio de estar próximos de produtores de uvas, morangos e framboesas orgânicas. Além de colher direto do pé, você pode adquirir produtos como doces, geleias, licores e sucos. No outono (a partir de abril), participe da colheita do pinhão — sensacional!</p>
+        <p>Voo cedo? Reunião que terminou tarde? Saiu para jantar fora? Sua senha funciona em qualquer hora — o hotel é seu enquanto você estiver hospedado. A operação é digital e autônoma; não tem porteiro para acordar nem recepcionista para esperar.</p>
         <ul class="feat-list">
-          <li>Morangos e framboesas orgânicas (Lagoa Preta)</li>
-          <li>Colheita de uvas (Vale dos Pinhões)</li>
-          <li>Pinhão no outono</li>
-          <li>Artesanato de vime (Rio Gargantilho)</li>
+          <li>Entrada e saída livres durante toda a estadia</li>
+          <li>Equipe disponível pelo WhatsApp para suporte</li>
+          <li>Áreas comuns acessíveis com a mesma senha</li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- PET FRIENDLY — txt-block com foto de fundo -->
-<section class="sec-photo" style="--bg-photo:url('../assets/img/placeholder.svg')">
+<!-- REGRAS -->
+<section style="background:var(--surface)">
   <div class="container">
-    <div class="txt-block">
-      <div>
-        <span class="txt-block-icon"><i class="ph-thin ph-dog"></i></span>
-        <div class="txt-block-tag">Pet Friendly</div>
-        <h2>Traga Seu Pet</h2>
-        <p>Sabemos como é triste deixar seu amiguinho para trás. Por isso, permitimos que você traga seu pet para desfrutar junto os momentos de lazer.</p>
+    <div class="sec-head c">
+      <p class="overline">Regras da casa</p>
+      <h2>O que você precisa saber</h2>
+      <div class="divider cx"></div>
+    </div>
+    <div class="dif-g">
+      <div class="dif-c">
+        <div class="dif-icon"><i class="ph-thin ph-clock"></i></div>
+        <h4>Horários</h4>
+        <p>Check-in das 14h às 23h. Checkout até 11h. Após esse horário, fale com a equipe pelo WhatsApp.</p>
       </div>
-      <div class="txt-block-cols">
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-currency-circle-dollar"></i> Taxa: R$ 100/diária por pet</h4>
-          <p>Valor cobrado por diária para seu amiguinho.</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-clipboard-text"></i> Máximo 1 pet por estadia</h4>
-          <p>Limitamos a 1 pet por reserva.</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-dog"></i> Cães sempre na guia ou no colo</h4>
-          <p>Há outros cães soltos na pousada, por segurança.</p>
-        </div>
-        <div class="txt-item">
-          <h4><i class="ph-thin ph-broom"></i> Tutor responsável pela limpeza</h4>
-          <p>Cuidados com higiene dentro e fora do chalé.</p>
-        </div>
+      <div class="dif-c">
+        <div class="dif-icon"><i class="ph-thin ph-baby"></i></div>
+        <h4>Crianças e bebês</h4>
+        <p>Aceitos na categoria Duplo Casal. As demais categorias são para adultos. Fale conosco para detalhes.</p>
+      </div>
+      <div class="dif-c">
+        <div class="dif-icon"><i class="ph-thin ph-prohibit"></i></div>
+        <h4>Não permitido</h4>
+        <p>Fumar, animais de estimação e eventos não são permitidos. Sentimos muito pelo limite — é o que mantém o ambiente coerente para todos.</p>
       </div>
     </div>
   </div>
@@ -408,13 +375,13 @@
 <!-- CTA -->
 <section style="background:var(--accent);padding:clamp(4rem,8vw,6rem) 0">
   <div class="container" style="text-align:center">
-    <p class="overline" style="color:rgba(255,255,255,.7);text-align:center;display:block;margin:0 auto">Viva essa experiência</p>
-    <h2 style="color:#fff;margin:.6rem auto 1rem;text-align:center">Reserve sua estadia agora</h2>
-    <div class="divider cx" style="background:rgba(255,255,255,.5)"></div>
-    <p style="color:rgba(255,255,255,.8);margin:.8rem auto 2rem;max-width:50ch">Cavalos, pescaria, quadriciclo, natureza e muito mais esperam por você na Serra Geral.</p>
+    <p class="overline" style="color:rgba(255,255,255,.7);text-align:center;display:block;margin:0 auto">Reserve direto</p>
+    <h2 style="color:#fff;margin:.6rem auto 1rem;text-align:center">Pronto para experimentar?</h2>
+    <div class="divider cx" style="background:var(--cta)"></div>
+    <p style="color:rgba(255,255,255,.8);margin:.8rem auto 2rem;max-width:50ch">Reserve em poucos cliques e teste na prática como um hotel digital pode ser mais simples.</p>
     <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
-      <a href="../contato/" class="btn-outline-w">Fale Conosco</a>
-      <a href="https://wa.me/5551999998888" target="_blank" rel="noopener" class="btn-gold">WhatsApp</a>
+      <a href="#" onclick="openBooking();return false" class="btn-gold">Reservar Agora</a>
+      <a href="https://wa.me/5581000000000" target="_blank" rel="noopener" class="btn-outline-w">Falar pelo WhatsApp</a>
     </div>
   </div>
 </section>
@@ -424,15 +391,15 @@
   <div class="container">
     <div class="ft-grid">
       <div class="ft-brand">
-        <span class="logo">Vale das Araucárias</span>
-        <p>Sua experiência rural autêntica na Serra Geral. Chalés rústicos, passeios a cavalo e natureza de tirar o fôlego.</p>
+        <a href="../index.html" class="logo"><img src="../assets/img/logo.png" alt="Sunsmart Hotel" class="logo-img"></a>
+        <p>Hotel digital no Pina, Recife. Check-in online, sem chaves, smart market e coworking. Prático, inteligente, digital.</p>
         <div class="ft-social">
-          <a href="https://instagram.com/pousadavaledasaraucarias" target="_blank" rel="noopener" aria-label="Instagram">
+          <a href="https://instagram.com/sunsmarthotel" target="_blank" rel="noopener" aria-label="Instagram">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
             </svg>
           </a>
-          <a href="https://wa.me/5551999998888" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <a href="https://wa.me/5581000000000" target="_blank" rel="noopener" aria-label="WhatsApp">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
               <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
             </svg>
@@ -441,40 +408,37 @@
       </div>
       <div class="ft-col">
         <h4>Navegação</h4>
-        <a href="../sobre/">Sobre a Pousada</a>
-        <a href="../experiencia/">Experiência</a>
+        <a href="../sobre/">Sobre</a>
+        <a href="../experiencia/">Como funciona</a>
         <a href="../acomodacoes/">Acomodações</a>
         <a href="../galeria/">Galeria</a>
         <a href="../localizacao/">Localização</a>
-        <a href="../blog/">Blog</a>
         <a href="../contato/">Contato</a>
       </div>
       <div class="ft-col">
         <h4>Contato</h4>
-        <span><i class="ph-thin ph-phone"></i> (51) 99999-8888</span>
-        <span><i class="ph-thin ph-envelope-simple"></i> contato@pousadavaledasaraucarias.com.br</span>
-        <span><i class="ph-thin ph-map-pin"></i> RS 453 Km 58, Vale dos Pinhões 001</span>
-        <span>Campos do Pinhão – RS</span>
-        <span>CEP 95270-000</span>
+        <span><i class="ph-thin ph-phone"></i> (81) 0000-0000</span>
+        <span><i class="ph-thin ph-envelope-simple"></i> contato@sunsmarthotel.com.br</span>
+        <span><i class="ph-thin ph-map-pin"></i> Pina — Recife/PE</span>
+        <span>A 10 min do RioMar</span>
       </div>
       <div class="ft-col">
-        <h4>Atrações Próximas</h4>
-        <span><i class="ph-thin ph-mountains"></i> Serra do Vale Azul</span>
-        <span><i class="ph-thin ph-drop"></i> Cachoeira do Vale</span>
-        <span><i class="ph-thin ph-mountains"></i> Morro dos Pinhais</span>
-        <span><i class="ph-thin ph-mountains"></i> Pedra Alta</span>
-        <span><i class="ph-thin ph-snowflake"></i> Cascata Congelante</span>
+        <h4>Por Perto</h4>
+        <span><i class="ph-thin ph-shopping-bag"></i> Shopping RioMar</span>
+        <span><i class="ph-thin ph-first-aid"></i> Polo Médico</span>
+        <span><i class="ph-thin ph-buildings"></i> Centro de Convenções</span>
+        <span><i class="ph-thin ph-airplane-takeoff"></i> Aeroporto do Recife</span>
       </div>
     </div>
     <div class="ft-bottom">
-      <p>© 2025 Pousada Vale das Araucárias · Todos os direitos reservados</p>
-      <p>Desenvolvido por <a href="#" target="_blank">Template Modelo</a></p>
+      <p>© 2026 Sunsmart Hotel · Todos os direitos reservados</p>
+      <p>Desenvolvido por <a href="#" target="_blank">CI Digital Marketing</a></p>
     </div>
   </div>
 </footer>
 
 <!-- WA BUTTON -->
-<a class="wa-btn" href="https://wa.me/5551999998888" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
+<a class="wa-btn" href="https://wa.me/5581000000000" target="_blank" rel="noopener" aria-label="Falar pelo WhatsApp">
   <svg viewBox="0 0 24 24">
     <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
   </svg>
