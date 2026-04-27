@@ -1,9 +1,9 @@
 {
-  "_template_note": "Plano editorial ficcional do template-modelo. Substitua tópicos, palavras-chave e público-alvo pelos dados do cliente real.",
+  "_note": "Plano editorial do blog do Sunsmart Hotel. Pilares e tópicos pensados para o público que viaja a Recife — corporativo, saúde, eventos, processo de visto, compras.",
 
   "editorial_strategy": {
-    "goal": "Atrair tráfego orgânico qualificado de famílias interessadas em turismo rural, Serra Geral e experiências com animais, convertendo em reservas diretas",
-    "tone": "Informativo e acolhedor, com CTAs sutis para reserva. Escrita em português brasileiro, familiar e caloroso, como uma conversa entre amigos.",
+    "goal": "Atrair tráfego orgânico qualificado de quem busca hospedagem em Recife (Pina, Boa Viagem, Polo Médico, Centro de Convenções, Consulado Americano), convertendo em reservas diretas no motor.",
+    "tone": "Direto, prático, urbano. Foca em autonomia, agilidade, custo-benefício. Sem jargão emocional, sem linguagem afetuosa. Português brasileiro, frases curtas.",
     "word_count": "800-1200",
     "target_keywords_per_post": 3,
     "internal_links_per_post": 2,
@@ -11,35 +11,55 @@
     "posting_schedule": "sexta-feira às 14h",
     "content_pillars": [
       {
-        "pillar": "Destino",
-        "description": "O que fazer, onde ir, roteiros pela Serra Geral e região de Campos do Pinhão",
-        "example_topics": ["Cachoeiras imperdíveis na Serra Geral", "O que fazer em Campos do Pinhão e arredores", "Roteiro de 3 dias na Serra Geral"]
+        "pillar": "Recife corporativo",
+        "description": "Conteúdo para quem viaja a Recife a trabalho — Polo Médico, Centro de Convenções, Consulado Americano, reuniões e treinamentos.",
+        "example_topics": [
+          "Recife para quem viaja a trabalho: guia rápido",
+          "Como se preparar para o visto americano em Recife",
+          "Onde se hospedar perto do Polo Médico do Recife",
+          "Eventos no Centro de Convenções de PE: como planejar a viagem"
+        ]
       },
       {
-        "pillar": "Experiência",
-        "description": "Vivências na pousada: animais, cavalgadas, pescaria, vida no campo, gastronomia serrana",
-        "example_topics": ["Passeio a cavalo na Serra Geral", "Pescaria em família: diversão no lago", "Colheita de frutas na serra"]
+        "pillar": "Hotelaria digital",
+        "description": "Como funciona o modelo do Sunsmart e por que faz sentido para o público que resolve tudo pelo celular.",
+        "example_topics": [
+          "Check-in digital sem fila: como funciona na prática",
+          "Hotel sem chave: vantagens e como o acesso por senha funciona",
+          "Hotel com cozinha compartilhada: para quem faz sentido",
+          "Smart market 24h: o que esperar de um autoatendimento de hotel"
+        ]
       },
       {
-        "pillar": "Família",
-        "description": "Dicas para viagens em família, atividades para crianças, benefícios do contato com animais e natureza",
-        "example_topics": ["Atividades para crianças na serra", "Benefícios do contato com animais para crianças", "Férias em família no campo"]
+        "pillar": "Pina e arredores",
+        "description": "O que tem perto do Sunsmart no bairro do Pina e regiões vizinhas em Recife.",
+        "example_topics": [
+          "O que fazer perto do Pina, Recife — guia para hóspedes",
+          "Como ir do Pina ao Recife Antigo, RioMar e Boa Viagem",
+          "Restaurantes recomendados no Pina e arredores",
+          "Praia do Pina: o que esperar de uma manhã na praia"
+        ]
       },
       {
         "pillar": "Dicas práticas",
-        "description": "Informações úteis para quem visita a Serra Geral",
-        "example_topics": ["O que levar para a Serra Geral", "Melhor época para visitar a serra", "Como chegar a Campos do Pinhão"]
+        "description": "Logística e dicas úteis para a estadia no Recife.",
+        "example_topics": [
+          "Aeroporto do Recife: tempo até o Pina e melhores rotas",
+          "Como funciona o transporte por aplicativo no Recife",
+          "Carnaval e Réveillon em Recife: o que considerar na hospedagem",
+          "Recife com agenda apertada: como otimizar 48 horas na cidade"
+        ]
       }
     ]
   },
 
   "seo_rules": {
-    "title_format": "{Título do Post} | Blog Pousada Vale das Araucárias",
+    "title_format": "{Título do Post} | Blog Sunsmart Hotel",
     "meta_description_max_chars": 155,
     "url_slug_format": "lowercase, hifenizado, sem acentos, max 5 palavras",
     "heading_structure": "H1 único (título), H2 para seções, H3 para subseções",
     "schema_type": "BlogPosting",
-    "canonical_base": "https://pousadavaledasaraucarias.com.br/blog/",
+    "canonical_base": "https://www.sunsmarthotel.com.br/blog/",
     "open_graph_type": "article",
     "required_meta": [
       "title", "meta description", "canonical", "og:title", "og:description",
@@ -53,70 +73,70 @@
       "Introdução (2-3 parágrafos, inclui keyword principal)",
       "Corpo (3-5 seções com H2, conteúdo útil e original)",
       "CTA final (link para reserva ou contato)",
-      "Links internos naturais no texto"
+      "Links internos naturais no texto (mínimo 2 — preferencialmente apontando para /experiencia/, /localizacao/, /acomodacoes/)"
     ],
-    "footer_cta": "Hospede-se na Pousada Vale das Araucárias — seu refúgio rural na Serra Geral, com cavalgadas inclusas e natureza de tirar o fôlego."
+    "footer_cta": "Hospede-se no Sunsmart Hotel — hotel digital no Pina, Recife. Check-in 100% online, acesso 24h, smart market e café & coworking."
   },
 
   "published": [
     {
-      "topic": "Cachoeiras imperdíveis perto de Campos do Pinhão na Serra Geral",
-      "pillar": "Destino",
-      "target_keywords": ["cachoeiras serra geral", "cachoeira campos do pinhão", "cachoeiras vale dos pinhões"],
-      "published_date": "2026-04-19",
-      "slug": "cachoeiras-serra-geral"
+      "topic": "Recife para quem viaja a trabalho: guia rápido",
+      "pillar": "Recife corporativo",
+      "target_keywords": ["recife viagem corporativa", "hotel pina recife trabalho", "hospedagem polo medico recife"],
+      "published_date": "2026-04-27",
+      "slug": "recife-para-quem-viaja-a-trabalho"
     }
   ],
 
   "upcoming": [
     {
-      "topic": "Passeio a cavalo na Serra Geral: o que esperar e por que as crianças amam",
-      "pillar": "Experiência",
-      "target_keywords": ["passeio a cavalo serra geral", "cavalgada campos do pinhão", "passeio a cavalo crianças"],
-      "target_date": "2026-04-25",
-      "slug": "passeio-cavalo-serra-geral"
+      "topic": "Check-in digital sem fila: como funciona na prática",
+      "pillar": "Hotelaria digital",
+      "target_keywords": ["check-in digital hotel", "check-in online sem fila", "hotel sem recepcao recife"],
+      "target_date": "2026-05-08",
+      "slug": "check-in-digital-como-funciona"
     },
     {
-      "topic": "O que fazer em Campos do Pinhão: guia completo para famílias",
-      "pillar": "Destino",
-      "target_keywords": ["campos do pinhão o que fazer", "turismo campos do pinhão", "campos do pinhão serra geral"],
-      "target_date": "2026-05-02",
-      "slug": "o-que-fazer-campos-do-pinhao"
+      "topic": "Onde se hospedar perto do Polo Médico do Recife",
+      "pillar": "Recife corporativo",
+      "target_keywords": ["hospedagem polo medico recife", "hotel proximo polo medico", "hotel pina polo medico"],
+      "target_date": "2026-05-15",
+      "slug": "hospedagem-perto-polo-medico-recife"
     },
     {
-      "topic": "Benefícios do contato com animais para crianças: como a vida no campo transforma",
-      "pillar": "Família",
-      "target_keywords": ["contato com animais crianças", "benefícios animais crianças", "fazenda crianças RS"],
-      "target_date": "2026-05-09",
-      "slug": "contato-animais-criancas-beneficios"
+      "topic": "O que fazer perto do Pina, Recife — guia para hóspedes",
+      "pillar": "Pina e arredores",
+      "target_keywords": ["o que fazer pina recife", "bairro pina recife", "atracoes pina recife"],
+      "target_date": "2026-05-22",
+      "slug": "o-que-fazer-perto-do-pina"
     },
     {
-      "topic": "Serra do Vale Azul: como visitar o mirante mais famoso da região",
-      "pillar": "Destino",
-      "target_keywords": ["serra do vale azul", "mirante serra geral", "serra geral pontos turísticos"],
-      "target_date": "2026-05-16",
-      "slug": "serra-vale-azul-como-visitar"
+      "topic": "Como se preparar para o visto americano em Recife",
+      "pillar": "Recife corporativo",
+      "target_keywords": ["consulado americano recife", "visto americano recife hotel", "hospedagem consulado recife"],
+      "target_date": "2026-05-29",
+      "slug": "visto-americano-recife-guia"
     },
     {
-      "topic": "O que levar para uma viagem à Serra Geral com crianças",
+      "topic": "Aeroporto do Recife: tempo até o Pina e melhores rotas",
       "pillar": "Dicas práticas",
-      "target_keywords": ["o que levar serra geral", "viagem serra geral crianças", "dicas serra geral"],
-      "target_date": "2026-05-23",
-      "slug": "o-que-levar-serra-geral"
+      "target_keywords": ["aeroporto recife pina", "aeroporto guararapes hotel", "como chegar pina aeroporto recife"],
+      "target_date": "2026-06-05",
+      "slug": "aeroporto-recife-ao-pina"
     },
     {
-      "topic": "Inverno na Serra Geral: neve, sincelo e experiências únicas",
-      "pillar": "Destino",
-      "target_keywords": ["inverno serra geral", "neve campos do pinhão", "sincelo serra geral"],
-      "target_date": "2026-05-30",
-      "slug": "inverno-serra-geral"
+      "topic": "Hotel com cozinha compartilhada: para quem faz sentido",
+      "pillar": "Hotelaria digital",
+      "target_keywords": ["hotel cozinha compartilhada", "hotel com cozinha recife", "hospedagem economica recife"],
+      "target_date": "2026-06-12",
+      "slug": "hotel-cozinha-compartilhada"
     },
     {
-      "topic": "Pousada pet friendly na Serra Geral: viaje com seu melhor amigo",
-      "pillar": "Experiência",
-      "target_keywords": ["pousada pet friendly serra geral", "viajar com cachorro serra", "hotel pet RS"],
-      "target_date": "2026-06-06",
-      "slug": "pousada-pet-friendly-serra"
+      "topic": "Restaurantes recomendados no Pina e arredores",
+      "pillar": "Pina e arredores",
+      "target_keywords": ["restaurantes pina recife", "onde comer pina", "restaurantes proximo riomar"],
+      "target_date": "2026-06-19",
+      "slug": "restaurantes-pina-recife"
     }
   ]
 }
