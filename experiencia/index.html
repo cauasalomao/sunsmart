@@ -27,6 +27,15 @@
 .exp-intro h2 { margin:.5rem 0 1rem; }
 .exp-intro p { margin:0 auto; font-size:1.05rem; }
 
+/* PÚBLICOS — ícones em traços finos */
+.aud-icons { display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(1.5rem,3vw,2.5rem); }
+.aud-i { display:flex; flex-direction:column; align-items:center; text-align:center; padding:2.5rem 1.6rem; background:var(--surface); border-top:2px solid var(--cta); transition:transform .3s var(--ease), box-shadow .3s; }
+.aud-i:hover { transform:translateY(-4px); box-shadow:var(--shadow); }
+.aud-i i { font-size:3.5rem; color:var(--accent); margin-bottom:1.2rem; line-height:1; }
+.aud-i h3 { font-size:1.05rem; font-weight:600; letter-spacing:-.005em; margin-bottom:.6rem; color:var(--text); }
+.aud-i p { font-size:.86rem; line-height:1.6; max-width:32ch; margin:0; }
+@media(max-width:768px){ .aud-icons { grid-template-columns:1fr; } }
+
 .feat-block { display:grid; grid-template-columns:1fr 1fr; gap:clamp(3rem,6vw,6rem); align-items:center; margin-bottom:clamp(5rem,10vw,8rem); }
 .feat-block.reverse { direction:rtl; }
 .feat-block.reverse > * { direction:ltr; }
@@ -166,21 +175,21 @@
     </div>
 
     <!-- PÚBLICOS -->
-    <div class="aud-grid" style="margin-top:3.5rem">
-      <div class="aud-card">
-        <img src="../assets/img/fotos/05_Cafe_Coworking/IMG_4721.jpg" alt="Hóspede no espaço de coworking do Sunsmart" loading="lazy">
-        <div class="aud-ov"></div>
-        <span class="aud-label">Para quem viaja a trabalho</span>
+    <div class="aud-icons" style="margin-top:3.5rem">
+      <div class="aud-i">
+        <i class="ph-thin ph-briefcase"></i>
+        <h3>Para quem viaja a trabalho</h3>
+        <p>Wi-Fi rápido, café & coworking, check-in flexível e localização perto do Polo Médico, Centro de Convenções e Aeroporto.</p>
       </div>
-      <div class="aud-card">
-        <img src="../assets/img/fotos/11_Quartos/IMG_4884.jpg" alt="Suíte casal do Sunsmart" loading="lazy">
-        <div class="aud-ov"></div>
-        <span class="aud-label">Para casais</span>
+      <div class="aud-i">
+        <i class="ph-thin ph-heart"></i>
+        <h3>Para casais</h3>
+        <p>Suíte Duplo Casal compacta e bem resolvida, a poucos minutos da Praia do Pina e do RioMar. Ideal para fins de semana sem complicação.</p>
       </div>
-      <div class="aud-card">
-        <img src="../assets/img/fotos/04_Lobby_Hall/IMG_4559.jpg" alt="Lobby do Sunsmart" loading="lazy">
-        <div class="aud-ov"></div>
-        <span class="aud-label">Para estadias autônomas</span>
+      <div class="aud-i">
+        <i class="ph-thin ph-key"></i>
+        <h3>Para estadias autônomas</h3>
+        <p>Acesso 24h por senha, smart market e cozinha compartilhada para resolver tudo no seu tempo, sem depender de horários da recepção.</p>
       </div>
     </div>
   </div>
