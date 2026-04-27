@@ -304,6 +304,13 @@
          <div class="gi-ov">⊕</div>
        </div>`
     ).join('');
+    grid.querySelectorAll('img').forEach(img => {
+      if (img.complete && img.naturalWidth > 0) img.classList.add('loaded');
+      else {
+        img.addEventListener('load',  () => img.classList.add('loaded'), {once:true});
+        img.addEventListener('error', () => img.classList.add('loaded'), {once:true});
+      }
+    });
   }
   GALLERY.forEach(([path]) => LB_SRCS.push('../assets/img/' + path));
 </script>
