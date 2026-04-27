@@ -4,9 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project overview
 
-**Template-modelo** para sites de pousada, derivado da base Komplexa Hotéis. Site estático preenchido com uma identidade fictícia (**Pousada Vale das Araucárias**, Campos do Pinhão/RS) que funciona como ponto de partida ao duplicar o projeto para um novo cliente. HTML5, CSS3 e JavaScript vanilla — sem build, sem framework, sem `package.json`, sem testes. Português do Brasil em todo o conteúdo.
+Site do **Sunsmart Hotel** (Pina, Recife/PE) — hotel digital com check-in online, sem recepção física tradicional, sem chaves, posicionado como prático/inteligente/digital. Construído sobre o template Komplexa Hotéis (originalmente preenchido com a fictícia Pousada Vale das Araucárias) e em processo de adaptação para a identidade Sunsmart.
 
-Quando o usuário pedir "adaptar este site para o cliente X", a operação é primariamente busca/substituição — a lista completa de termos a trocar está em `README.md`. Este CLAUDE.md foca na arquitetura e nas pegadinhas que não dá pra descobrir só lendo o código.
+HTML5, CSS3 e JavaScript vanilla — sem build, sem framework, sem `package.json`, sem testes. Português do Brasil em todo o conteúdo.
+
+Este CLAUDE.md foca na arquitetura, no contexto do cliente Sunsmart e nas pegadinhas que não dá pra descobrir só lendo o código. A lista mecânica de termos a trocar (template → cliente) está em `README.md`.
 
 ## Desenvolvimento
 
@@ -27,8 +29,8 @@ Cada página é um diretório com `index.html` para URLs limpas:
 ```
 /                            Home (hero + strip + prévias de sobre/experiências/quartos/blog + CTA)
 /sobre/                      Sobre, história
-/experiencia/                Atividades (Cavalgada, Pescaria, Quadriciclo, Pet, etc.)
-/acomodacoes/                4 chalés em grid (sem filtros)
+/experiencia/                Atividades / o que faz o hotel ser "smart"
+/acomodacoes/                Quartos em grid (sem filtros)
 /galeria/                    Galeria completa com lightbox (sem filtros — array único)
 /localizacao/                Mapa + atrações próximas
 /contato/                    Formulário + mapa
@@ -37,13 +39,17 @@ Cada página é um diretório com `index.html` para URLs limpas:
 /blog/{slug}/                Posts individuais
 ```
 
-Raiz também guarda: `hotel-config.json`, `blog-plan.json`, `sitemap.xml`, `robots.txt`, dois briefings `.md` de referência, `README.md` com o passo a passo de replicação, `favicon.svg`.
+Raiz também guarda: `hotel-config.json`, `blog-plan.json`, `sitemap.xml`, `robots.txt`, briefings `.md`, `README.md`, `favicon.svg`.
+
+> A estrutura herda de "pousada com chalés/atividades". Para Sunsmart, várias seções (`experiencia`, atividades como cavalgada/pescaria, "atrações próximas" estilo Serra Geral) precisam ser **repropostas** — não só renomeadas. Ex.: `experiencia` vira "Como funciona" / "Tecnologia & autonomia"; "acomodações" passa a listar 3 categorias de quarto (não 4 chalés).
 
 ## Arquitetura essencial
 
 ### CSS único — `assets/css/style.css`
 
-Todo o estilo em um só arquivo, guiado por custom properties (`--accent: #5b7a3d` verde floresta, `--cta: #f6b230` dourado, `--font-display: 'Pinyon Script'`, `--font-body: 'Raleway'`). Responsivo em 768/640/480px. Espaçamentos via `clamp()`. Classes curtas quase-BEM: `.rc` room card, `.gi` gallery item, `.exp-card`, `.rp-c`, `.aud-card`, `.fg`, `.btn-gold`/`.btn-green`/`.btn-outline`/`.btn-outline-w`.
+Todo o estilo em um só arquivo, guiado por custom properties. Os tokens atuais ainda são do template (`--accent: #5b7a3d` verde floresta, `--cta: #f6b230` dourado, `--font-display: 'Pinyon Script'`, `--font-body: 'Raleway'`) — **incompatíveis com a identidade Sunsmart** (digital, urbana, moderna). Ao adaptar, atualize os tokens em um único lugar; o resto da CSS lê deles.
+
+Responsivo em 768/640/480px. Espaçamentos via `clamp()`. Classes curtas quase-BEM: `.rc` room card, `.gi` gallery item, `.exp-card`, `.rp-c`, `.aud-card`, `.fg`, `.btn-gold`/`.btn-green`/`.btn-outline`/`.btn-outline-w`. (Os nomes `btn-gold`/`btn-green` são herdados — pode-se manter como tokens semânticos e só trocar as cores.)
 
 ### JS único — `assets/js/main.js`
 
@@ -58,14 +64,14 @@ Toda a interatividade vive aqui. Primitivas principais:
 
 ```js
 const WEBHOOK_URL   // URL do webhook n8n/Zapier — todos os forms postam aqui
-const HOTEL_NAME    // usado em todos os payloads de webhook
+const HOTEL_NAME    // usado em todos os payloads de webhook → trocar para "Sunsmart Hotel"
 const WA_NUMBER     // formato '55 + DDD + número' sem pontuação
 const WA_MESSAGE    // texto pré-preenchido em wa.me?text=
-const BOOKING_URL   // domínio do site
+const BOOKING_URL   // domínio do site → sunsmarthotel.com.br
 const MOTOR_BASE    // base do motor de reservas
 ```
 
-Formato da URL do motor: `{MOTOR_BASE}/search/{ci}/{co}/{adults}-{age1}-{age2}` (ex.: 2 adultos + crianças de 5 e 8 anos → `.../search/2026-05-10/2026-05-12/2-5-8`). Atualmente aponta para o domínio-modelo — trocar `MOTOR_BASE` pela URL do motor real (Foco Multimídia ou equivalente) ao ativar reservas para um cliente.
+Formato da URL do motor: `{MOTOR_BASE}/search/{ci}/{co}/{adults}-{age1}-{age2}` (ex.: 2 adultos + crianças de 5 e 8 anos → `.../search/2026-05-10/2026-05-12/2-5-8`). Trocar `MOTOR_BASE` pela URL do motor real (Foco Multimídia ou equivalente) quando o cliente fornecer.
 
 ## Dois modais globais injetados via JS
 
@@ -77,7 +83,7 @@ Intercepta **todo** clique em `a[href*="wa.me/"]` do site (botão flutuante, CTA
 
 ### Modal de reservas (classes `.bk-*`) — motor Foco Multimídia
 
-Disparado somente por `onclick="openBooking();return false"` explícito nos CTAs "Reservar". **Não intercepta links globalmente** — o trigger é opt-in por botão. Todos os "Reservar"/"Reservar Agora"/"Reservar Estadia"/"Fazer Reserva" seguem esse padrão, incluindo a versão do mobnav que encadeia `closeMob();openBooking();return false`. Na home, o CTA de WhatsApp do hero foi substituído por "Reservar Agora" apontando para este modal.
+Disparado somente por `onclick="openBooking();return false"` explícito nos CTAs "Reservar". **Não intercepta links globalmente** — o trigger é opt-in por botão. Todos os "Reservar"/"Reservar Agora"/"Reservar Estadia"/"Fazer Reserva" seguem esse padrão, incluindo a versão do mobnav que encadeia `closeMob();openBooking();return false`.
 
 Form: check-in / check-out / adultos (1–5) / crianças (0–3). Mudar o select de crianças renderiza N selects de idade (0–12). Submit monta a URL e faz `window.open(url, '_blank', 'noopener')`, depois fecha. O footer do modal tem um fallback por WhatsApp. Fecha com × / backdrop / Esc.
 
@@ -91,45 +97,69 @@ Ao adicionar um novo CTA "Reservar" em qualquer lugar, use:
 
 `/galeria/index.html` tem um `<div class="gal-g" id="galGrid"></div>` vazio e uma única array inline `GALLERY` (path + alt) no final da página. Um único pass do script monta o grid e popula `LB_SRCS`. Para adicionar/remover fotos, edite só a array — os índices (`openLB(i)`) são calculados.
 
-Neste template, a array contém 12 entradas, todas apontando para `placeholder.svg`. Ao adaptar para um cliente, substitua os paths por fotos reais (e acrescente entradas conforme o cliente tiver material).
+Para Sunsmart há material real abundante (ver próxima seção). Substitua as 12 entradas placeholder por uma curadoria das fotos reais — provavelmente 30–60 entradas distribuídas pelas categorias visuais do hotel.
+
+## Material fotográfico do Sunsmart
+
+Fotos reais já catalogadas em `assets/img/fotos/`, organizadas em 12 pastas temáticas:
+
+```
+01_Fachada_Entrada       (5 fotos)   → hero, sobre, localização
+02_Rua_Exterior          (7 fotos)   → contexto urbano, localização
+03_Acesso_Recepcao_Virtual (9 fotos) → "Como funciona", check-in digital, totens
+04_Lobby_Hall            (7 fotos)   → ambientes comuns
+05_Cafe_Coworking        (5 fotos)   → diferencial — espaço de trabalho/café
+06_Smart_Market          (5 fotos)   → loja conveniência autoatendimento (diferencial)
+07_Cozinha_Comum         (8 fotos)   → cozinha compartilhada
+08_Lockers_Roupas        (3 fotos)   → autosserviço de bagagem/roupas
+09_CFTV_Seguranca        (1 foto)    → segurança digital
+10_Corredores_Sinalizacao (9 fotos)  → ambientação, sinalização moderna
+11_Quartos               (20 fotos)  → categorias de quarto
+12_Banheiros             (12 fotos)  → banheiros das suítes
+```
+
+Cada nome de pasta é a "intenção editorial" da imagem — use isso ao decidir onde colocar cada foto. As fotos das pastas 03/05/06/08/09 são as que **provam o posicionamento "digital/smart"** e devem aparecer com destaque (não enterradas na galeria).
 
 ## Padrão de dobras alternadas (página Experiência)
 
-O `<style>` inline em `experiencia/index.html` define modificadores reutilizáveis:
+O `<style>` inline em `experiencia/index.html` define modificadores reutilizáveis — vale a pena reaproveitar mesmo após repropor a página para "Como funciona / Tecnologia":
 
-- `.sec-green` / `.sec-green-dark` — seção verde sólida com sobreposições de texto branco para `.feat-block`, `.txt-block`, `.txt-item`. A variante `-dark` usa `--accent-hover` (#1a4922).
-- `.sec-photo` — seção com imagem de fundo fixa. **Não use `background-attachment: fixed`** — ele está quebrado globalmente por `html { zoom: 0.8 }`. A solução: a seção tem `clip-path: inset(0)` + `isolation: isolate`; `::before` é `position: fixed; inset: 0` com `background-image: var(--bg-photo)`; `::after` é a sobreposição escura, também fixed. O estilo inline define `--bg-photo: url(...)`. Isso dá um parallax real clipado aos limites da seção.
+- `.sec-green` / `.sec-green-dark` — seção de cor sólida com texto branco. Os nomes referenciam a paleta antiga; ao trocar para a paleta Sunsmart, mantenha a estrutura e só atualize a cor do `--accent`/`--accent-hover`.
+- `.sec-photo` — seção com imagem de fundo fixa. **Não use `background-attachment: fixed`** — está quebrado globalmente por `html { zoom: 0.8 }`. A solução: a seção tem `clip-path: inset(0)` + `isolation: isolate`; `::before` é `position: fixed; inset: 0` com `background-image: var(--bg-photo)`; `::after` é a sobreposição escura, também fixed. O estilo inline define `--bg-photo: url(...)`. Isso dá um parallax real clipado aos limites da seção.
 - `.aud-grid` / `.aud-card` — grid de 3 colunas com cards de imagem, overlay em gradiente e label em fonte display no terço inferior.
 - `.quad-split` — imagem à esquerda, texto+cards à direita. Combinado com `.quad-cols` (grid 2×2 de itens).
 
 ## Placeholders de imagem e logo
 
-Este template **não tem fotos reais**. Todas as tags `<img>` e `background-image` apontam para um de três arquivos:
+Todas as `<img>` e `background-image` ainda apontam para placeholders herdados do template:
 
-- `assets/img/placeholder.svg` — SVG genérico (retângulo + ícone de montanha + texto "FOTO") usado em 100% dos conteúdos.
+- `assets/img/placeholder.svg` — SVG genérico (retângulo + ícone de montanha + texto "FOTO"). O ícone de montanha **não combina** com a identidade Sunsmart; no curto prazo só substitua os caminhos pelas fotos reais (não há mais necessidade do placeholder).
 - `assets/img/logo-placeholder.svg` — usado onde o logo do cliente apareceria (header, footer, logo no modal de reservas injetado por JS).
-- `favicon.svg` — único favicon referenciado (um `<link rel="icon" type="image/svg+xml" href="favicon.svg">` por página, sem PNG/ICO fallback).
+- `favicon.svg` — único favicon referenciado.
 
-**Ao duplicar para um cliente**, substitua esses placeholders:
-1. Coloque as fotos reais em `assets/img/` (use subpastas temáticas se quiser: `hero/`, `quartos/`, `atividades/`).
-2. Rode um find/replace trocando `placeholder.svg` pelos paths reais em cada HTML (ou edite por seção).
-3. Substitua `logo-placeholder.svg` pelo logo do cliente; se o novo logo for PNG, atualize a extensão em cada `<img src=...>` e na constante do modal de reservas injetado por `main.js`.
-4. Substitua `favicon.svg` (pode adicionar PNG/ICO para suporte em navegadores antigos).
-
-As tags `<img>` preservam `alt` descritivo — esses alts funcionam como documentação de "o que deveria entrar aqui" quando o template for adaptado.
+**Substituições para Sunsmart**:
+1. Trocar `placeholder.svg` pelos paths reais em `assets/img/fotos/{categoria}/IMG_xxxx.jpg` em cada HTML. Os `alt` atuais descrevem chalés/araucárias — reescreva alt descritivo para o que a foto Sunsmart realmente mostra.
+2. Substituir `logo-placeholder.svg` pelo logo do Sunsmart quando recebido; se for PNG, atualizar a extensão em cada `<img src=...>` e na constante do modal de reservas em `main.js`.
+3. Substituir `favicon.svg` pelo símbolo do Sunsmart.
 
 ## Google Maps embed
 
-Os iframes em `/contato/` e `/localizacao/` consultam **pelo nome do negócio**, não pelo endereço: `maps.google.com/maps?q=Pousada+Vale+das+Arauc%C3%A1rias,+Campos+do+Pinh%C3%A3o+-+RS&output=embed`. Consultar por endereço faz o Google interpretar segmentos e renderizar uma rota de direção em vez de um pin. Para a nova cliente, troque o parâmetro `q=` preservando o padrão (nome + cidade + UF, sem rua).
+Os iframes em `/contato/` e `/localizacao/` consultam **pelo nome do negócio**, não pelo endereço. Para Sunsmart, usar:
+
+```
+https://maps.google.com/maps?q=Sunsmart+Hotel,+Pina,+Recife+-+PE&output=embed
+```
+
+Consultar por endereço faz o Google interpretar segmentos e renderizar uma rota em vez de um pin.
 
 ## SEO e structured data
 
-Cada página inclui JSON-LD Schema.org (LodgingBusiness na home, WebPage + BreadcrumbList no resto, BlogPosting nos posts), meta tags Open Graph, Twitter cards, URL canônica. `sitemap.xml` e `robots.txt` na raiz — atualizar `sitemap.xml` sempre que um post ou página for adicionado.
+Cada página inclui JSON-LD Schema.org (LodgingBusiness na home, WebPage + BreadcrumbList no resto, BlogPosting nos posts), meta tags Open Graph, Twitter cards, URL canônica. `sitemap.xml` e `robots.txt` na raiz — atualizar `sitemap.xml` sempre que um post ou página for adicionado. Trocar URL canônica para `https://www.sunsmarthotel.com.br/...` ao adaptar.
 
 ## Arquivos de configuração
 
-- **`hotel-config.json`** — fonte de verdade ficcional: contato (telefone/e-mail/WA), endereço + coordenadas, 4 acomodações, atividades, pacotes, política pet, atrações próximas, restaurantes locais, integrações (`webhook_url`, `booking_engine_url`), design tokens, configurações de blog. Mantenha em sincronia com as constantes do `main.js` quando valores mudarem. **Comece por este arquivo ao adaptar o site para um novo cliente.**
-- **`blog-plan.json`** — estratégia editorial, regras de SEO, spec do template de post, lista `published` e fila `upcoming`. Pilares de conteúdo: Destino, Experiência, Família, Dicas práticas.
+- **`hotel-config.json`** — fonte de verdade do site: contato (telefone/e-mail/WA), endereço + coordenadas, categorias de quarto, diferenciais, pacotes, atrações próximas, integrações (`webhook_url`, `booking_engine_url`), design tokens, configurações de blog. Mantenha em sincronia com as constantes do `main.js` quando valores mudarem. **Comece por este arquivo ao adaptar o site para Sunsmart** — depois propague as mudanças para HTML/JS/CSS.
+- **`blog-plan.json`** — estratégia editorial, regras de SEO, spec do template de post, lista `published` e fila `upcoming`. Os pilares atuais (Destino/Experiência/Família/Dicas) servem para pousada de serra; **repensar pilares** para Sunsmart (ex.: "Recife para o viajante a trabalho", "Como funciona o check-in digital", "Pina e arredores", "Compras/eventos/saúde em Recife").
 
 ## Fluxo de criação de post no blog
 
@@ -140,26 +170,33 @@ Cada página inclui JSON-LD Schema.org (LodgingBusiness na home, WebPage + Bread
 5. Adicionar card em `blog/index.html` dentro de `#blogGrid`.
 6. Adicionar `<url>` em `sitemap.xml`.
 7. Mover item de `upcoming` para `published` em `blog-plan.json`.
-8. Commitar e fazer push.
+8. Commitar localmente (push só com link + ordem explícitos — ver "Preferência do usuário").
 
 ### Checklist de SEO por post
 
-`<title>` único com keyword (formato `{Título} | Blog Pousada Vale das Araucárias`), meta description ≤155 caracteres, URL canônica, Open Graph, `article:published_time`, JSON-LD `BlogPosting` + `BreadcrumbList`, `<h1>` único, `<h2>` por seção, ≥2 links internos, `.blog-cta-box` no fim.
+`<title>` único com keyword (formato `{Título} | Blog Sunsmart Hotel`), meta description ≤155 caracteres, URL canônica, Open Graph, `article:published_time`, JSON-LD `BlogPosting` + `BreadcrumbList`, `<h1>` único, `<h2>` por seção, ≥2 links internos, `.blog-cta-box` no fim.
 
-## Contexto do hotel (decisões de conteúdo vêm daqui)
+## Contexto do hotel Sunsmart (decisões de conteúdo vêm daqui)
 
-- **Localização:** Campos do Pinhão, Serra Geral, RS — rodovia RS 453.
-- **História:** propriedade familiar desde 2005, aberta como pousada em 2019.
-- **4 unidades:** Chalé Mirante (casais, luxo), Chalé Araucária (famílias, vista lago), Chalé Rancho (famílias, animais), Casarão Pinhão (grupos até 12).
-- **Diferencial:** cavalgadas e pôneis inclusos na diária.
-- **Público:** famílias 35–45 com crianças, incluindo famílias com crianças autistas buscando contato com animais.
-- **Origem dos hóspedes:** Rio Grande do Sul (Porto Alegre, Caxias, Gramado) + Santa Catarina + Paraná.
-- **Self-catering:** sem refeições inclusas (cozinha completa em cada unidade); café da manhã planejado.
-- **Expansão:** piscina aquecida, infantil, ofurô em obras.
-- **Tom:** acolhedor, familiar, autêntico — como receber amigos em casa. Nunca formal.
-- **Idioma:** português brasileiro em todo o site.
+Fonte: `# Briefing do Cliente.md` + `# Sunsmart Hotel - Briefing do Sistema.md`.
 
-Ao adaptar para um cliente real, **este bloco inteiro é a primeira coisa a reescrever neste CLAUDE.md** — as decisões de conteúdo (tom, público, diferenciais, atrações próximas) são o que a LLM usa para manter coerência ao escrever novas seções ou posts.
+- **Identidade:** "Prático. Inteligente. Digital." Hotel digital nascido na pandemia, inspirado em redes econômicas tipo Ibis Budget mas mais enxuto e tecnológico. Não há equivalente direto no mercado local de Recife percebido pelos fundadores.
+- **Localização:** Bairro do Pina, Recife/PE. Próximo a Shopping RioMar (10 min a pé), Praia do Pina (<1 km), Recife Antigo, Polo Médico, Consulado Americano, Centro de Convenções de Pernambuco, Aeroporto Internacional do Guararapes (15 min).
+- **Estrutura:** 20 suítes — Duplo c/ cama de casal, Duplo c/ 2 solteiros, Triplo c/ 3 solteiros. Quartos ~10–12m². Áreas comuns: lobby, cozinha compartilhada, café/coworking, smart market (autoatendimento), lockers.
+- **Operação:** check-in 100% online, sem chaves físicas (senha enviada por e-mail/WhatsApp após pagamento), sem recepção 24h presencial — equipe reduzida, camareiras presentes em horário comercial. Atendimento por canais digitais.
+- **Público:**
+  - Corporativo, casais sem filhos, jovens, viajantes "smartphone-natives".
+  - Estadias curtas: consultas médicas (Polo Médico), processo de visto americano (Consulado), eventos no Centro de Convenções/Recife Expo, compras no RioMar, reuniões nos empresariais da região.
+  - Origem majoritária: Nordeste.
+- **Diferenciais:** localização estratégica · check-in sem fila · operação digital autônoma · custo-benefício · modelo inovador · café/coworking · smart market · cozinha compartilhada · acesso 24h livre.
+- **Restrições:** aceita crianças e bebês (categoria duplo casal); proíbe fumar, animais, eventos. Check-in 14h–23h, checkout 10h–11h. Quarto individual de solteiro **não** aceita crianças.
+- **Sazonalidade:** Carnaval e Réveillon → 100% ocupação, tarifas até 4× a média.
+- **Promoções ativas:** cupons para recorrentes, parcerias comerciais.
+- **Objetivos comerciais:** aumentar reservas diretas, atrair público digital maduro, reforçar jornada autônoma, reduzir atendimento humano.
+- **Tom de voz:** moderno, direto, eficiente, urbano. Foca em **autonomia, agilidade, tecnologia, custo-benefício**. Evita linguagem afetuosa/familiar/rural — é o oposto do tom de "pousada acolhedora" do template original.
+- **Contraponto importante:** o template foi escrito para uma pousada serrana familiar. Toda decisão de copy/design herdada (vocabulário "acolhedor", "como receber amigos em casa", paleta verde floresta, fonte caligráfica Pinyon Script) precisa ser repensada para Sunsmart, não só traduzida.
+- **Idioma:** português brasileiro.
+- **Responsável pelo briefing:** Adalberto, Proprietário.
 
 ## Convenções
 
@@ -170,6 +207,12 @@ Ao adaptar para um cliente real, **este bloco inteiro é a primeira coisa a rees
 - O path do logo no markup injetado por JS usa `/assets/img/logo-placeholder.svg` absoluto para resolver corretamente a partir de qualquer profundidade.
 - Não edite a CSS legada `.wa-modal` — é herança do template base sem uso; o modal de WhatsApp vivo usa classes `.wl-*`.
 
-## Preferência do usuário
+## Preferência do usuário — política de Git
 
-O usuário mantém a branch `main` sincronizada com o repositório remoto e **faz commit + push após cada alteração de código, sem precisar pedir**. Ao adaptar este template para um cliente real, o fluxo segue o mesmo padrão.
+Commits locais automáticos na branch `main` são ok e esperados após cada alteração de código, sem precisar pedir.
+
+**Push para o GitHub, porém, NÃO é automático.** Um push anterior do template sobrescreveu o repositório de um cliente real em produção. Para evitar reincidência:
+
+- **Nunca** rodar `git push`, `gh pr create`, `gh repo create`, ou qualquer comando que envie conteúdo deste diretório para o GitHub por iniciativa própria.
+- Publicar só quando o usuário **explicitamente** fornecer, na mesma instrução, **(a)** a URL do repositório remoto correto **e (b)** a ordem clara de dar push/publicar. Ambos os itens precisam estar presentes — um sem o outro não basta.
+- Antes de executar o push autorizado, rodar `git remote -v` e confirmar que o remote aponta para a URL fornecida (adicionar/ajustar `origin` se necessário).

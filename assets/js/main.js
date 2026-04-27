@@ -1,14 +1,13 @@
 /* ============================================================
-   POUSADA VALE DAS ARAUCÁRIAS — main.js v3
-   TEMPLATE-MODELO — substitua as constantes abaixo por cliente
+   SUNSMART HOTEL — main.js
    ============================================================ */
 
-const WEBHOOK_URL = 'https://webhook.example.com/webhook/REPLACE-ME';
-const HOTEL_NAME  = 'Pousada Vale das Araucárias';
-const WA_NUMBER   = '5551999998888';
-const WA_MESSAGE  = 'Olá! Gostaria de mais informações sobre a Pousada Vale das Araucárias.';
-const BOOKING_URL = 'https://pousadavaledasaraucarias.com.br/';
-const MOTOR_BASE  = 'https://pousadavaledasaraucarias.com.br'; // substitua pela URL do motor de reservas (ex: Foco Multimídia) quando disponível
+const WEBHOOK_URL = 'https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f';
+const HOTEL_NAME  = 'Sunsmart Hotel';
+const WA_NUMBER   = '558130493310';
+const WA_MESSAGE  = 'Olá! Gostaria de mais informações sobre o Sunsmart Hotel.';
+const BOOKING_URL = 'https://www.sunsmarthotel.com.br/';
+const MOTOR_BASE  = 'https://www.sunsmarthotel.com.br/pt/search';
 
 // ── dataLayer GTM ──
 window.dataLayer = window.dataLayer || [];
@@ -212,12 +211,12 @@ document.addEventListener('visibilitychange', () => {
   });
 })();
 
-// ── MODAL DE RESERVA (Foco Multimídia) ──
-function buildBookingURL(checkin, checkout, adults, childAges) {
+// ── MODAL DE RESERVA (motor Sunsmart) ──
+// Formato: https://www.sunsmarthotel.com.br/pt/search?from=YYYY-MM-DD&to=YYYY-MM-DD&persons=N
+function buildBookingURL(checkin, checkout, persons) {
   if (!checkin || !checkout) return null;
-  let guestStr = String(adults || 2);
-  if (childAges && childAges.length) guestStr += '-' + childAges.join('-');
-  return `${MOTOR_BASE}/search/${checkin}/${checkout}/${guestStr}`;
+  const params = new URLSearchParams({ from: checkin, to: checkout, persons: String(persons || 2) });
+  return `${MOTOR_BASE}?${params.toString()}`;
 }
 
 function openBooking() {
@@ -229,34 +228,12 @@ function closeBooking() {
   document.body.style.overflow = '';
 }
 
-function updateChildAges() {
-  const n = parseInt(document.getElementById('bk-children')?.value || '0');
-  const container = document.getElementById('bkChildAges');
-  if (!container) return;
-  container.innerHTML = '';
-  for (let i = 0; i < n; i++) {
-    const fg = document.createElement('div');
-    fg.className = 'fg';
-    fg.innerHTML = `<label>Idade criança ${i + 1}</label>
-      <select id="bk-child-${i}">
-        ${Array.from({length:13}, (_, a) => `<option value="${a}">${a} ${a===1?'ano':'anos'}</option>`).join('')}
-      </select>`;
-    container.appendChild(fg);
-  }
-}
-
 function submitBooking(e) {
   e.preventDefault();
   const ci = document.getElementById('bk-checkin').value;
   const co = document.getElementById('bk-checkout').value;
-  const adults = document.getElementById('bk-adults').value;
-  const nChildren = parseInt(document.getElementById('bk-children')?.value || '0');
-  const childAges = [];
-  for (let i = 0; i < nChildren; i++) {
-    const age = document.getElementById(`bk-child-${i}`)?.value;
-    if (age !== undefined) childAges.push(age);
-  }
-  const url = buildBookingURL(ci, co, adults, childAges);
+  const persons = document.getElementById('bk-persons').value;
+  const url = buildBookingURL(ci, co, persons);
   if (url) window.open(url, '_blank', 'noopener');
   closeBooking();
 }
@@ -269,7 +246,7 @@ function submitBooking(e) {
       <div class="bk-modal-box">
         <button class="bk-close" onclick="closeBooking()" aria-label="Fechar">&times;</button>
         <div class="bk-header">
-          <img src="/assets/img/logo-placeholder.svg" alt="${HOTEL_NAME}" width="48" height="48">
+          <img src="/assets/img/logo.png" alt="${HOTEL_NAME}" height="48">
           <div>
             <h3 id="bkTitle">Reserve sua Estadia</h3>
             <p>Preencha os dados e consulte disponibilidade</p>
@@ -288,26 +265,14 @@ function submitBooking(e) {
           </div>
           <div class="bk-row">
             <div class="fg">
-              <label>Adultos *</label>
-              <select id="bk-adults">
-                <option value="1">1 adulto</option>
-                <option value="2" selected>2 adultos</option>
-                <option value="3">3 adultos</option>
-                <option value="4">4 adultos</option>
-                <option value="5">5 adultos</option>
-              </select>
-            </div>
-            <div class="fg">
-              <label>Crianças</label>
-              <select id="bk-children" onchange="updateChildAges()">
-                <option value="0" selected>Nenhuma</option>
-                <option value="1">1 criança</option>
-                <option value="2">2 crianças</option>
-                <option value="3">3 crianças</option>
+              <label>Pessoas *</label>
+              <select id="bk-persons">
+                <option value="1">1 pessoa</option>
+                <option value="2" selected>2 pessoas</option>
+                <option value="3">3 pessoas</option>
               </select>
             </div>
           </div>
-          <div class="bk-child-ages" id="bkChildAges"></div>
           <button type="submit" class="bk-submit">Verificar Disponibilidade</button>
           <p class="bk-alt">Prefere falar com a gente?
             <a href="https://wa.me/${WA_NUMBER}?text=${waText}" target="_blank" rel="noopener" class="bk-wa-link">Fale pelo WhatsApp</a>

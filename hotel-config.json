@@ -1,362 +1,265 @@
 {
-  "_template_note": "Template-modelo fictício. Substitua todos os valores por dados do cliente real ao duplicar este projeto. Consulte README.md para o passo a passo de replicação.",
+  "_note": "Fonte de verdade do site Sunsmart Hotel. Mantenha em sincronia com as constantes em assets/js/main.js.",
 
   "hotel": {
-    "name": "Pousada Vale das Araucárias",
-    "tagline": "Seu refúgio rural autêntico na Serra Geral",
-    "description_short": "Pousada rural em Campos do Pinhão, Serra Geral - RS. Chalés aconchegantes entre araucárias, cavalgadas inclusas e contato direto com a natureza e animais.",
-    "description_long": "A Pousada Vale das Araucárias nasceu em 2019 da transformação de um sítio familiar em um refúgio rural acolhedor. Localizada em Campos do Pinhão, na Serra Geral do Rio Grande do Sul, a pousada oferece chalés completos em madeira rústica, cavalgadas e passeios de pônei inclusos na diária, pescaria no lago, quadriciclo e uma infinidade de atividades ao ar livre. É o lugar ideal para famílias que buscam reconectar-se com a natureza, proporcionar experiências únicas com animais para as crianças e viver momentos autênticos de vida no campo.",
-    "style": "Rural autêntico, rústico acolhedor, vida no campo, contato com animais",
-    "target_audience": "Famílias com filhos pequenos ou adolescentes (35-45 anos) que buscam conexão com a natureza, experiências com animais e vida no campo. Também famílias com crianças autistas e grupos de amigos.",
-    "tone": "Acolhedor, familiar, autêntico, caloroso e próximo — como receber amigos em casa. Sem formalidade, com carinho genuíno."
+    "name": "Sunsmart Hotel",
+    "tagline": "Prático. Inteligente. Digital.",
+    "description_short": "Hotel digital no Pina, Recife. Check-in 100% online, sem chaves, sem filas. Localização estratégica perto do Shopping RioMar, Praia do Pina e Aeroporto.",
+    "description_long": "O Sunsmart Hotel nasceu da percepção de que o setor hoteleiro precisava de um modelo mais enxuto, autônomo e tecnológico. Localizado no Pina, em Recife, oferece uma experiência de hospedagem digital: reserva, pagamento e check-in 100% online, acesso por senha (sem chaves físicas), liberdade total para entrar e sair quando quiser. Equipe reduzida, atendimento ágil por canais digitais, e um espaço moderno com lobby, café/coworking, smart market de autoatendimento, cozinha compartilhada e lockers. Tudo o que é essencial — sem o que não é — para o melhor custo-benefício na sua viagem a Recife.",
+    "style": "Digital, urbano, contemporâneo, funcional",
+    "target_audience": "Público corporativo, casais sem filhos, jovens e viajantes familiarizados com aplicativos. Estadias curtas em Recife: consultas no Polo Médico, processo de visto americano, eventos no Centro de Convenções, compras no RioMar, visitas aos empresariais.",
+    "tone": "Moderno, direto, eficiente. Foca em autonomia, agilidade e tecnologia. Sem jargão emocional ou linguagem afetuosa."
   },
 
   "contact": {
-    "phone": "(51) 99999-8888",
-    "phone_international": "+55-51-99999-8888",
-    "email": "contato@pousadavaledasaraucarias.com.br",
-    "wa_number": "5551999998888",
-    "instagram": "pousadavaledasaraucarias",
-    "instagram_url": "https://instagram.com/pousadavaledasaraucarias"
+    "phone": "(81) 3049-3310",
+    "phone_international": "+55-81-3049-3310",
+    "email": "contato@sunsmarthotel.com.br",
+    "wa_number": "558130493310",
+    "instagram": "sunsmarthotel",
+    "instagram_url": "https://instagram.com/sunsmarthotel"
   },
 
   "address": {
-    "street": "RS 453 Km 58, Estrada do Pinhal 001",
-    "neighborhood": "Vale dos Pinhões",
-    "city": "Campos do Pinhão",
-    "state": "RS",
-    "zip": "95270-000",
+    "neighborhood": "Pina",
+    "city": "Recife",
+    "state": "PE",
     "country": "BR",
     "coordinates": {
-      "lat": -28.8700,
-      "lng": -50.6200
+      "lat": -8.121,
+      "lng": -34.901
     }
   },
 
   "business": {
-    "cnpj": "00.000.000/0001-00",
-    "number_of_units": 4,
-    "checkin_time": "15:00",
-    "checkout_time": "12:00",
-    "price_range": "$$",
-    "average_daily_rate": "R$ 890,00",
-    "direct_booking_rate": "90%"
-  },
-
-  "mission_vision_values": {
-    "mission": "Atender nossos hóspedes com excelência, proporcionar conforto e experiências marcantes com segurança, fortalecendo parcerias locais e a cultura da Serra Geral.",
-    "vision": "Ser referência em pousada rural na Serra Geral do Rio Grande do Sul, reconhecida pelos hóspedes, comunidade e fornecedores pela excelência no atendimento, pela integração com o território e pelo crescimento sustentável.",
-    "values": [
-      "Preservação e respeito à fauna e à flora da Mata Atlântica e das araucárias",
-      "Tratar com respeito, ética e honestidade os colaboradores, fornecedores e hóspedes",
-      "Respeito à diversidade humana e cultural",
-      "Valorização da cultura serrana e dos produtores locais"
-    ]
+    "number_of_units": 20,
+    "checkin_time": "14:00",
+    "checkin_time_end": "23:00",
+    "checkout_time": "10:00",
+    "checkout_time_end": "11:00",
+    "price_range": "$"
   },
 
   "accommodations": [
     {
-      "category": "luxo",
-      "name": "Chalé Mirante",
-      "label": "Para casais exigentes",
-      "capacity": "1 casal + até 2 filhos pequenos",
-      "area": "100m²",
+      "category": "duplo-casal",
+      "name": "Quarto Duplo - Cama de Casal",
+      "label": "Para casais e estadias a dois",
+      "capacity": "Até 2 pessoas",
+      "area": "12m²",
+      "beds": "1 cama de casal",
+      "accepts_children": true,
+      "accepts_babies": true,
       "highlights": [
-        "Banheira de hidromassagem com cromoterapia",
         "Ar-condicionado",
-        "Lareira a lenha",
-        "Cozinha completa com cooktop e cafeteira",
-        "Cama Queen de alto padrão com dossel",
-        "Mezanino com 2 camas box solteiro",
-        "Smart TV com Netflix",
-        "Internet 100mb",
-        "Sacada com vista para o pôr do sol",
-        "Churrasqueira de alvenaria",
-        "Redes na varanda e no bosque",
-        "À beira de araucárias centenárias"
+        "Wi-Fi de alta velocidade",
+        "Smart TV",
+        "Banheiro privativo com ducha potente",
+        "Cobertores e travesseiros extras",
+        "Acesso 24h por senha digital",
+        "Acesso à cozinha compartilhada",
+        "Acesso ao smart market autoatendimento"
       ],
-      "image": "assets/img/placeholder.svg"
+      "image": "assets/img/fotos/11_Quartos/IMG_4875.jpg"
     },
     {
-      "category": "familia",
-      "name": "Chalé Araucária",
-      "label": "Para 2 famílias",
-      "capacity": "Até 6 pessoas (2 casais + 1 filho cada)",
+      "category": "duplo-solteiros",
+      "name": "Quarto Duplo - 2 Camas de Solteiro",
+      "label": "Para amigos ou colegas em viagem",
+      "capacity": "Até 2 pessoas",
+      "beds": "2 camas de solteiro",
+      "accepts_children": false,
+      "accepts_babies": false,
       "highlights": [
-        "Vista para o lago dos pinhões",
-        "2 quartos com 2 camas de casal cada",
-        "Ar-condicionado em cada quarto",
-        "Deck com vista para a mata",
-        "Cozinha conjugada com sala",
-        "Smart TV com Netflix",
-        "Internet 100mb",
-        "Fogão a lenha e a gás",
-        "Churrasqueira de alvenaria",
-        "Lareira"
+        "Ar-condicionado individual",
+        "Wi-Fi de alta velocidade",
+        "Smart TV de 32+ polegadas",
+        "Banheiro privativo",
+        "Armário e cabides",
+        "Mesa com tomada elétrica",
+        "Acesso 24h por senha digital"
       ],
-      "image": "assets/img/placeholder.svg"
+      "image": "assets/img/fotos/11_Quartos/IMG_4972.jpg"
     },
     {
-      "category": "familia",
-      "name": "Chalé Rancho",
-      "label": "Para famílias com crianças",
-      "capacity": "Até 6 pessoas (2 casais + 1 filho cada)",
+      "category": "triplo",
+      "name": "Quarto Triplo - 3 Camas de Solteiro",
+      "label": "Para grupos pequenos",
+      "capacity": "Até 3 pessoas",
+      "beds": "3 camas de solteiro",
+      "accepts_children": false,
+      "accepts_babies": false,
       "highlights": [
-        "Campo gramado com pôneis e cavalos livres",
-        "2 quartos com 2 camas de casal cada",
-        "Ar-condicionado em um quarto, varanda no outro",
-        "Cozinha conjugada com sala",
-        "Internet 100mb",
-        "Fogão a lenha e a gás",
-        "Churrasqueira",
-        "Lareira",
-        "Gangorra, bola, vôlei para crianças",
-        "Contato direto com pôneis"
+        "Ar-condicionado",
+        "Wi-Fi de alta velocidade",
+        "Smart TV",
+        "Banheiro privativo",
+        "Espaço para malas",
+        "Acesso 24h por senha digital",
+        "Ideal para equipes em viagem corporativa"
       ],
-      "image": "assets/img/placeholder.svg"
+      "image": "assets/img/fotos/11_Quartos/IMG_5025.jpg"
     },
     {
-      "category": "grupo",
-      "name": "Casarão Pinhão",
-      "label": "Para grupos e famílias grandes",
-      "capacity": "Até 12 pessoas",
+      "category": "individual",
+      "name": "Quarto Individual - Cama de Solteiro",
+      "label": "Para o viajante solo",
+      "capacity": "1 pessoa",
+      "area": "10m²",
+      "beds": "1 cama de solteiro",
+      "accepts_children": false,
+      "accepts_babies": false,
       "highlights": [
-        "3 quartos com ar-condicionado",
-        "Cama de casal + triliche por quarto",
-        "Sofá-cama na sala",
-        "2 banheiros com aquecimento a gás",
-        "Lareira central",
-        "Fogão a lenha e a gás",
-        "Geladeira + freezer + micro-ondas",
-        "Sala de jogos com sinuca e pebolim",
-        "Churrasqueira com espetos e grelha",
-        "Ideal para reencontros, encontros de família e grupos de amigos"
+        "Ar-condicionado controlado individualmente",
+        "Wi-Fi de alta velocidade",
+        "Smart TV HD 32+ polegadas",
+        "Banheiro privativo com itens básicos",
+        "Cozinha compacta no quarto",
+        "Geladeira, freezer, forno e máquina de café",
+        "Mesa com tomada",
+        "Quarto para não fumantes"
       ],
-      "image": "assets/img/placeholder.svg"
+      "image": "assets/img/fotos/11_Quartos/IMG_5051.jpg"
     }
   ],
 
   "amenities_all_units": [
-    "Cozinha completa",
-    "Churrasqueira",
-    "Lareira",
-    "Varanda ampla",
-    "Redes para descanso",
-    "Roupas de cama fornecidas",
-    "Lenha para lareira/fogão (2 caixas inclusas)"
+    "Ar-condicionado",
+    "Wi-Fi de alta velocidade",
+    "Água quente",
+    "Cobertores e travesseiros extras",
+    "Smart TV",
+    "Roupas de cama e toalhas fornecidas",
+    "Itens básicos de banheiro"
+  ],
+
+  "amenities_common_areas": [
+    "Lobby com acesso 24h",
+    "Cozinha compartilhada completa",
+    "Café e coworking",
+    "Smart Market (autoatendimento)",
+    "Lockers",
+    "CFTV de segurança",
+    "Estacionamento de rua gratuito",
+    "Permitido deixar malas",
+    "Serviço diário de limpeza",
+    "Check-in/checkout expressos"
   ],
 
   "differentials": [
-    "Cavalgadas e passeios de pônei inclusos na diária, sem custo adicional",
-    "Contato direto com animais: pôneis, cavalos, patos, gansos, galinhas, ovelhas",
-    "Experiência autêntica de vida no campo entre araucárias centenárias",
-    "Atendimento altamente personalizado — hóspedes se tornam amigos",
-    "Forte conexão emocional — alto índice de retorno",
-    "Ambiente ideal para crianças, incluindo crianças autistas",
-    "Pet friendly (com regras e taxa)"
+    "Check-in 100% online — sem fila, sem chaves",
+    "Acesso por senha digital, liberdade 24h",
+    "Operação digital autônoma — você no controle",
+    "Localização estratégica no Pina, Recife",
+    "Smart Market autoatendimento dentro do hotel",
+    "Café & coworking para o viajante a trabalho",
+    "Cozinha compartilhada com equipamentos completos",
+    "Camareiras presentes em horário comercial",
+    "Atendimento ágil por canais digitais"
   ],
 
-  "activities": {
-    "free": [
-      "Cavalgadas e passeios de pônei",
-      "Pescaria no lago (carpas, traíras, lambaris)",
-      "Canoa no lago",
-      "Casinha na árvore",
-      "Carrinho de correr morro",
-      "Passeio de bicicleta (adulto e infantil)",
-      "Balanço panorâmico",
-      "Gangorra rústica",
-      "Parquinho infantil",
-      "Alimentação dos pôneis",
-      "Fotos com os pôneis",
-      "Colher ovos do galinheiro",
-      "Alimentar o porquinho",
-      "Colheita de uva e amora (jan-mar)",
-      "Pinhão (abril-junho)",
-      "Contato com animais da pousada",
-      "Passeio de carretinha puxada pelo quadriciclo"
-    ],
-    "paid": [
-      {
-        "name": "Quadriciclo",
-        "price": "R$ 75,00 (15min) ou R$ 300,00 (1h)",
-        "details": "Máximo 2 pessoas acima de 16 anos"
-      },
-      {
-        "name": "Passeio de carretinha adicional",
-        "price": "R$ 100,00"
-      }
-    ]
+  "rules": {
+    "smoking": false,
+    "pets": false,
+    "events": false,
+    "children_2_to_12": "Apenas em quartos duplos com cama de casal",
+    "babies_under_2": "Apenas em quartos duplos com cama de casal — berço não fornecido",
+    "checkin_window": "14:00 - 23:00",
+    "checkout_window": "10:00 - 11:00",
+    "dress_code": "Não permitido sem camisa ou em trajes de banho nas áreas comuns",
+    "noise": "Manter silêncio e respeito aos demais hóspedes"
   },
-
-  "packages": [
-    {
-      "name": "Pacote Romântico",
-      "description": "Ideal para lua de mel, aniversário de casamento, pedidos de noivado ou renovação conjugal",
-      "includes": [
-        "Decoração romântica com pétalas de rosa",
-        "Espumante nacional 750ml com champanheira e gelo",
-        "Garrafa de vinho de altitude 750ml",
-        "Chocolates",
-        "Frutas da estação"
-      ]
-    },
-    {
-      "name": "Pacote de Aniversário",
-      "description": "Celebre com decoração e guloseimas",
-      "includes": [
-        "Decoração com balões",
-        "Pipoca, gelatina, guloseimas",
-        "1 bolo médio (8 fatias)",
-        "Refrigerantes"
-      ]
-    }
-  ],
-
-  "pet_policy": {
-    "allowed": true,
-    "fee": "R$ 100,00 por diária, por pet",
-    "max_pets": 1,
-    "rules": [
-      "Não deixar o pet sozinho no chalé",
-      "Cães sempre na guia ou no colo (há cães soltos na pousada)",
-      "Cuidados com limpeza e higiene",
-      "Evitar ruídos que perturbem outros hóspedes",
-      "Danos provocados serão cobrados no check-out"
-    ]
-  },
-
-  "food_policy": "Não fornecemos alimentação. Chalés e casarão possuem cozinha completa. Mercado rural a 3km e mercado maior a 8km no centro de Campos do Pinhão. Pizzaria Nona faz delivery (51-3279-8888). Café da manhã previsto com conclusão do novo espaço gourmet.",
 
   "nearby_attractions": [
     {
-      "name": "Cachoeira do Vale",
-      "distance": "5km + trilha de 45min",
-      "entry": "R$ 10,00 por pessoa"
+      "name": "Shopping RioMar Recife",
+      "distance": "10 min a pé",
+      "type": "compras"
     },
     {
-      "name": "Cachoeira dos Pinheirais",
-      "distance": "14km + trilha de 2km",
-      "entry": "Gratuita"
+      "name": "Praia do Pina",
+      "distance": "menos de 1 km / 20 min a pé",
+      "type": "lazer"
     },
     {
-      "name": "Morro do Alvorecer",
-      "distance": "~30km",
-      "entry": "R$ 15,00 por pessoa"
+      "name": "Aeroporto Internacional dos Guararapes",
+      "distance": "15 min de carro",
+      "type": "transporte"
     },
     {
-      "name": "Cascata das Araucárias",
-      "distance": "30km",
-      "entry": "Paga"
+      "name": "Centro de Convenções de Pernambuco",
+      "distance": "15 min de carro",
+      "type": "eventos"
     },
     {
-      "name": "Morro dos Pinhais",
-      "distance": "36km",
-      "entry": "Gratuita",
-      "note": "1.700m de altitude, fenômeno do Sincelo no inverno"
+      "name": "Centro de Convenções do Recife",
+      "distance": "10 min de carro",
+      "type": "eventos"
     },
     {
-      "name": "Serra do Vale Azul",
-      "distance": "48km pela RS 453",
-      "entry": "Gratuita",
-      "note": "Mirante panorâmico com corte em rocha"
+      "name": "Recife Antigo",
+      "distance": "Acesso rápido",
+      "type": "turismo"
     },
     {
-      "name": "Cascata Congelante",
-      "distance": "30km",
-      "entry": "Gratuita",
-      "note": "Congela no inverno com temperaturas negativas"
+      "name": "Polo Médico",
+      "distance": "Próximo",
+      "type": "saude"
     },
     {
-      "name": "Pedra Alta / Mirante da Serra",
-      "distance": "50km",
-      "entry": "Agendamento prévio",
-      "note": "1.800m, segundo cume mais alto da região"
+      "name": "Consulado Americano",
+      "distance": "Acesso rápido",
+      "type": "servicos"
     }
   ],
 
-  "local_restaurants": [
-    {
-      "name": "Galpão da Serra GastroPub",
-      "city": "Campos do Pinhão",
-      "hours": "Seg-Dom 18:30–23:30",
-      "specialty": "Lanches artesanais, petiscos e pizzas com massa caseira",
-      "instagram": "https://www.instagram.com/galpaodaserra/"
-    },
-    {
-      "name": "Pizzaria Nona",
-      "city": "Campos do Pinhão",
-      "hours": "Seg-Sáb 11:30–14h / Seg-Dom 18:30–00:00",
-      "specialty": "Buffet almoço, lanches e pizzas à noite, delivery disponível",
-      "delivery_phone": "51-3279-8888",
-      "instagram": "https://www.instagram.com/pizzarianona/"
-    },
-    {
-      "name": "Vinícola Alto Pinhão",
-      "city": "Vale dos Pinhões",
-      "specialty": "Experiência enogastronômica, vinhos de altitude",
-      "website": "http://www.altopinhao.com.br/"
-    },
-    {
-      "name": "Restaurante Montês",
-      "city": "Campos do Pinhão",
-      "hours": "Ter-Sáb 12–15h e 19–22h / Dom 12–15h"
-    }
+  "promotions": [
+    "Cupons para hóspedes recorrentes",
+    "Parcerias comerciais"
   ],
 
-  "policies": {
-    "children": "Não pagam de 0 a 2 anos",
-    "payment": "Até 12x nos cartões de crédito",
-    "firewood": "2 caixas inclusas, adicional R$ 30,00/caixa",
-    "towels": "Hóspedes devem trazer toalhas de banho e rosto",
-    "charcoal": "Trazer carvão para churrasqueira"
-  },
-
-  "expansion_planned": [
-    "Piscina aquecida",
-    "Piscina infantil",
-    "Hidromassagem externa",
-    "Serviço de café da manhã"
+  "high_season": [
+    "Carnaval",
+    "Réveillon"
   ],
 
   "integrations": {
-    "webhook_url": "https://webhook.example.com/webhook/REPLACE-ME",
+    "webhook_url": "https://webhook.cidigitalmarketing.com/webhook/7c87bd71-6c33-437f-9073-2fae80d76d2f",
     "gtm_id": "",
-    "booking_engine_url": "https://pousadavaledasaraucarias.com.br/",
-    "maps_embed_url": "",
-    "domain": "https://pousadavaledasaraucarias.com.br"
+    "booking_engine_url": "https://www.sunsmarthotel.com.br/pt/search",
+    "booking_url_format": "https://www.sunsmarthotel.com.br/pt/search?from=YYYY-MM-DD&to=YYYY-MM-DD&persons=N",
+    "domain": "https://www.sunsmarthotel.com.br"
   },
 
   "design": {
-    "primary": "#5b7a3d",
-    "primary_dark": "#1a4922",
-    "accent": "#0a6427",
-    "cta": "#f6b230",
-    "cta_secondary": "#96804b",
-    "highlight": "#adb11d",
-    "bg": "#ffffff",
-    "text": "#000000",
-    "font_display": "Pinyon Script",
-    "font_body": "Raleway"
+    "primary": "#241F1F",
+    "primary_dark": "#000000",
+    "cta": "#FFCA0A",
+    "cta_hover": "#e6b400",
+    "bg": "#FEFCFF",
+    "text": "#241F1F",
+    "logo": "assets/img/logo.png",
+    "_font_note": "A definir — fonte cursiva Pinyon Script herdada do template é incompatível com a identidade Sunsmart. Recomendação: Manrope (display) + Inter (body)."
   },
 
   "blog": {
     "enabled": true,
     "topics_focus": [
-      "Serra Geral turismo",
-      "vida rural e natureza",
-      "atividades com crianças na serra",
-      "passeios a cavalo e contato com animais",
-      "cachoeiras e trilhas na Serra Geral",
-      "inverno na Serra Geral",
-      "gastronomia serrana",
-      "turismo pet friendly na serra"
+      "Recife para o viajante a trabalho",
+      "Hospedagem digital e check-in online",
+      "O bairro do Pina e arredores",
+      "Compras no RioMar e roteiros próximos",
+      "Eventos no Centro de Convenções de Pernambuco",
+      "Polo Médico Recife: hospedagem para acompanhantes",
+      "Recife para visto americano",
+      "Carnaval e Réveillon em Recife"
     ],
     "seo_region_keywords": [
-      "Campos do Pinhão", "Serra Geral", "Vale dos Pinhões",
-      "Morro dos Pinhais", "Serra do Vale Azul", "pousada rural RS"
+      "Pina Recife", "hotel Pina", "hotel digital Recife",
+      "hospedagem RioMar", "hotel perto Centro de Convenções Recife",
+      "hotel perto Aeroporto Recife", "hotel Polo Médico Recife"
     ],
     "internal_link_targets": ["acomodacoes", "experiencia", "contato", "galeria"],
-    "cta_default": "Reserve sua estadia na Pousada Vale das Araucárias"
+    "cta_default": "Reserve sua estadia no Sunsmart Hotel"
   }
 }

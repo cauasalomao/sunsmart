@@ -17,23 +17,23 @@ button { cursor: pointer; }
 
 /* ── TOKENS ── */
 :root {
-  --accent:       #5b7a3d;
-  --accent-hover: #1a4922;
-  --accent-rgb:   91, 122, 61;
-  --accent-soft:  rgba(91,122,61,.08);
-  --cta:          #f6b230;
-  --cta-hover:    #96804b;
-  --cta-rgb:      246,178,48;
-  --bg:           #ffffff;
-  --bg-rgb:       255,255,255;
-  --surface:      #f9f9f9;
-  --surface-light:#f0f0ec;
-  --text:         #000000;
-  --text-muted:   #4a4a4a;
-  --border:       rgba(91,122,61,.13);
+  --accent:       #241F1F;
+  --accent-hover: #000000;
+  --accent-rgb:   36, 31, 31;
+  --accent-soft:  rgba(36,31,31,.06);
+  --cta:          #FFCA0A;
+  --cta-hover:    #e6b400;
+  --cta-rgb:      255,202,10;
+  --bg:           #FEFCFF;
+  --bg-rgb:       254,252,255;
+  --surface:      #f6f4f7;
+  --surface-light:#ecebed;
+  --text:         #241F1F;
+  --text-muted:   #5a5454;
+  --border:       rgba(36,31,31,.12);
   --shadow:       0 4px 24px rgba(0,0,0,.07);
   --shadow-lg:    0 12px 48px rgba(0,0,0,.13);
-  --hero-overlay: linear-gradient(to bottom,rgba(20,24,14,.6) 0%,rgba(20,24,14,.65) 40%,rgba(20,24,14,.85) 100%);
+  --hero-overlay: linear-gradient(to bottom,rgba(20,18,18,.55) 0%,rgba(20,18,18,.65) 40%,rgba(20,18,18,.88) 100%);
   --font-display: 'Pinyon Script', cursive;
   --font-body:    'Raleway', sans-serif;
   --space-xs: clamp(.5rem,1vw,.75rem);
