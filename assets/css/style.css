@@ -91,7 +91,8 @@ img.loaded { opacity:1; }
 .hdr.solid { background:rgba(var(--bg-rgb),.97); backdrop-filter:blur(20px); padding:.9rem 0; box-shadow:0 1px 0 var(--border); }
 .hdr-inner { max-width:1400px; margin:0 auto; padding:0 clamp(1.5rem,4vw,3rem); display:flex; align-items:center; justify-content:space-between; }
 .logo { font-family:var(--font-display); font-size:1.4rem; font-weight:700; letter-spacing:-.01em; color:#fff; transition:color .4s; display:flex; align-items:center; }
-.logo .logo-img { height:42px; width:auto; opacity:1; filter:brightness(0) invert(1); transition:filter .4s; }
+.logo .logo-img { height:64px; width:auto; opacity:1; filter:brightness(0) invert(1); transition:filter .4s, height .4s; }
+.hdr.solid .logo .logo-img { height:52px; }
 .hdr.solid .logo { color:var(--accent); }
 .hdr.solid .logo .logo-img { filter:none; }
 .nav { display:flex; gap:2.2rem; }
