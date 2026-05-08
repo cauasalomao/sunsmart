@@ -7,7 +7,7 @@ const HOTEL_NAME  = 'Sun Smart Hotel';
 const WA_NUMBER   = '558130493310';
 const WA_MESSAGE  = 'Olá! Gostaria de mais informações sobre o Sun Smart Hotel.';
 const BOOKING_URL = 'https://www.sunsmarthotel.com.br/';
-const MOTOR_BASE  = 'https://www.sunsmarthotel.com.br/pt/search';
+const MOTOR_BASE  = 'https://reservas.sunsmarthotel.com.br/';
 
 // ── dataLayer GTM ──
 window.dataLayer = window.dataLayer || [];
@@ -212,7 +212,7 @@ document.addEventListener('visibilitychange', () => {
 })();
 
 // ── MODAL DE RESERVA (motor Sun Smart) ──
-// Formato: https://www.sunsmarthotel.com.br/pt/search?from=YYYY-MM-DD&to=YYYY-MM-DD&persons=N
+// Formato: https://reservas.sunsmarthotel.com.br/?from=YYYY-MM-DD&to=YYYY-MM-DD&persons=N
 function buildBookingURL(checkin, checkout, persons) {
   if (!checkin || !checkout) return null;
   const params = new URLSearchParams({ from: checkin, to: checkout, persons: String(persons || 2) });
